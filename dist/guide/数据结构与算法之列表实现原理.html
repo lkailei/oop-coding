@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>常见的列表实现原理 | 面向对象Coding</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <script>
+            var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?634681ee52ddf5b1f6ff2c69397bda83";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();
+            
+            </script>
+    <meta name="description" content="oopCoding">
+    
+    <link rel="preload" href="/vue-press/assets/css/0.styles.a7b48b74.css" as="style"><link rel="preload" href="/vue-press/assets/js/app.98d8bef1.js" as="script"><link rel="preload" href="/vue-press/assets/js/2.c05b7fa4.js" as="script"><link rel="preload" href="/vue-press/assets/js/60.cd59e3e3.js" as="script"><link rel="prefetch" href="/vue-press/assets/js/10.b0b1ab29.js"><link rel="prefetch" href="/vue-press/assets/js/11.abd4cee0.js"><link rel="prefetch" href="/vue-press/assets/js/12.f01bacfb.js"><link rel="prefetch" href="/vue-press/assets/js/13.6a0336ae.js"><link rel="prefetch" href="/vue-press/assets/js/14.4c7cd103.js"><link rel="prefetch" href="/vue-press/assets/js/15.14cf8099.js"><link rel="prefetch" href="/vue-press/assets/js/16.99b7d4e9.js"><link rel="prefetch" href="/vue-press/assets/js/17.af74b641.js"><link rel="prefetch" href="/vue-press/assets/js/18.41eaaad6.js"><link rel="prefetch" href="/vue-press/assets/js/19.2c3afb01.js"><link rel="prefetch" href="/vue-press/assets/js/20.f7169a2a.js"><link rel="prefetch" href="/vue-press/assets/js/21.df897cd1.js"><link rel="prefetch" href="/vue-press/assets/js/22.7034a423.js"><link rel="prefetch" href="/vue-press/assets/js/23.2386b7c7.js"><link rel="prefetch" href="/vue-press/assets/js/24.b6941784.js"><link rel="prefetch" href="/vue-press/assets/js/25.23a7fa69.js"><link rel="prefetch" href="/vue-press/assets/js/26.4b1a82de.js"><link rel="prefetch" href="/vue-press/assets/js/27.0be638cf.js"><link rel="prefetch" href="/vue-press/assets/js/28.e8d5a161.js"><link rel="prefetch" href="/vue-press/assets/js/29.c4f336ea.js"><link rel="prefetch" href="/vue-press/assets/js/3.8ea11f8e.js"><link rel="prefetch" href="/vue-press/assets/js/30.4b94204f.js"><link rel="prefetch" href="/vue-press/assets/js/31.cf1f58fa.js"><link rel="prefetch" href="/vue-press/assets/js/32.823894a0.js"><link rel="prefetch" href="/vue-press/assets/js/33.e33d865a.js"><link rel="prefetch" href="/vue-press/assets/js/34.df71d62e.js"><link rel="prefetch" href="/vue-press/assets/js/35.51f1121b.js"><link rel="prefetch" href="/vue-press/assets/js/36.4d01d025.js"><link rel="prefetch" href="/vue-press/assets/js/37.67293f42.js"><link rel="prefetch" href="/vue-press/assets/js/38.97f67132.js"><link rel="prefetch" href="/vue-press/assets/js/39.fd0ea0f5.js"><link rel="prefetch" href="/vue-press/assets/js/4.5a363195.js"><link rel="prefetch" href="/vue-press/assets/js/40.fce62c8f.js"><link rel="prefetch" href="/vue-press/assets/js/41.46c1dfe2.js"><link rel="prefetch" href="/vue-press/assets/js/42.2f6a3352.js"><link rel="prefetch" href="/vue-press/assets/js/43.f2cb40b0.js"><link rel="prefetch" href="/vue-press/assets/js/44.08a1d863.js"><link rel="prefetch" href="/vue-press/assets/js/45.66f1bbbc.js"><link rel="prefetch" href="/vue-press/assets/js/46.f063949d.js"><link rel="prefetch" href="/vue-press/assets/js/47.33d1f41f.js"><link rel="prefetch" href="/vue-press/assets/js/48.04699801.js"><link rel="prefetch" href="/vue-press/assets/js/49.7cd3afd3.js"><link rel="prefetch" href="/vue-press/assets/js/5.dfff2508.js"><link rel="prefetch" href="/vue-press/assets/js/50.c3c8025f.js"><link rel="prefetch" href="/vue-press/assets/js/51.7d2ddfde.js"><link rel="prefetch" href="/vue-press/assets/js/52.fff13010.js"><link rel="prefetch" href="/vue-press/assets/js/53.3da6148c.js"><link rel="prefetch" href="/vue-press/assets/js/54.31dd89fc.js"><link rel="prefetch" href="/vue-press/assets/js/55.b61bd458.js"><link rel="prefetch" href="/vue-press/assets/js/56.9ba07af1.js"><link rel="prefetch" href="/vue-press/assets/js/57.82769901.js"><link rel="prefetch" href="/vue-press/assets/js/58.477544ce.js"><link rel="prefetch" href="/vue-press/assets/js/59.880ff808.js"><link rel="prefetch" href="/vue-press/assets/js/6.efb1059d.js"><link rel="prefetch" href="/vue-press/assets/js/61.7d844834.js"><link rel="prefetch" href="/vue-press/assets/js/62.c5598e7a.js"><link rel="prefetch" href="/vue-press/assets/js/63.9fcdb7e3.js"><link rel="prefetch" href="/vue-press/assets/js/64.59160257.js"><link rel="prefetch" href="/vue-press/assets/js/65.e9c8b285.js"><link rel="prefetch" href="/vue-press/assets/js/66.782d1533.js"><link rel="prefetch" href="/vue-press/assets/js/67.a0f784ed.js"><link rel="prefetch" href="/vue-press/assets/js/7.fdc9ea19.js"><link rel="prefetch" href="/vue-press/assets/js/8.e2255c5a.js"><link rel="prefetch" href="/vue-press/assets/js/9.f026067a.js">
+    <link rel="stylesheet" href="/vue-press/assets/css/0.styles.a7b48b74.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vue-press/" class="home-link router-link-active"><!----> <span class="site-name">面向对象Coding</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vue-press/guide/" class="nav-link router-link-active">
+  指南
+</a></div><div class="nav-item"><a href="/vue-press/interview/" class="nav-link">
+  面试宝典
+</a></div><div class="nav-item"><a href="/vue-press/wechat/" class="nav-link">
+  公号文章
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工具" class="dropdown-title"><span class="title">后端工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工具" class="mobile-dropdown-title"><span class="title">后端工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.vuepress.vuejs.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vuepress
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://mvnrepository.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  maven
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工具" class="dropdown-title"><span class="title">前端工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工具" class="mobile-dropdown-title"><span class="title">前端工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https//www.vuepress.org.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vuepress
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.vue.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vue
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="/changeLog/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  changeLog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vue-press/guide/" class="nav-link router-link-active">
+  指南
+</a></div><div class="nav-item"><a href="/vue-press/interview/" class="nav-link">
+  面试宝典
+</a></div><div class="nav-item"><a href="/vue-press/wechat/" class="nav-link">
+  公号文章
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工具" class="dropdown-title"><span class="title">后端工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工具" class="mobile-dropdown-title"><span class="title">后端工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.vuepress.vuejs.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vuepress
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://mvnrepository.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  maven
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工具" class="dropdown-title"><span class="title">前端工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工具" class="mobile-dropdown-title"><span class="title">前端工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https//www.vuepress.org.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vuepress
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.vue.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vue
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="/changeLog/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  changeLog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Guide</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>基础</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vue-press/guide/Java学习路程总结：.html" class="sidebar-link">java学习路线总结</a></li><li><a href="/vue-press/guide/Java基础知识点.html" class="sidebar-link">java基础知识点</a></li><li><a href="/vue-press/guide/JavaWeb开发.html" class="sidebar-link">javaweb开发</a></li><li><a href="/vue-press/guide/数据结构与算法之列表实现原理.html" class="active sidebar-link">常见的列表实现原理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#常见的列表实现原理" class="sidebar-link">常见的列表实现原理：</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#arraylist实现原理" class="sidebar-link">ArrayList实现原理：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#linkedlist的实现原理" class="sidebar-link">LinkedList的实现原理：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#双端链表" class="sidebar-link">双端链表：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#双向链表" class="sidebar-link">双向链表：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#队列" class="sidebar-link">队列：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#数组" class="sidebar-link">数组：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#栈" class="sidebar-link">栈：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#树" class="sidebar-link">树：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#二叉树" class="sidebar-link" style="padding-left:3rem;">二叉树</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#图" class="sidebar-link">图：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#图的存储结构" class="sidebar-link" style="padding-left:3rem;">图的存储结构：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#图的遍历" class="sidebar-link" style="padding-left:3rem;">图的遍历：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#深度优先遍历" class="sidebar-link" style="padding-left:4rem;">深度优先遍历</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#广度优先遍历" class="sidebar-link" style="padding-left:4rem;">广度优先遍历</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#排序" class="sidebar-link">排序：</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#冒泡排序" class="sidebar-link">冒泡排序：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#快速排序" class="sidebar-link">快速排序：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#选择排序" class="sidebar-link">选择排序：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#插入排序" class="sidebar-link">插入排序：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/数据结构与算法之列表实现原理.html#希尔排序" class="sidebar-link">希尔排序：</a></li></ul></li></ul></li><li><a href="/vue-press/guide/数据结构与算法实战.html" class="sidebar-link">数据结构与算法实战</a></li><li><a href="/vue-press/guide/WebService.html" class="sidebar-link">WebService</a></li><li><a href="/vue-press/guide/WebSocket.html" class="sidebar-link">WebSecoket</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>高级</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>开发记录问题</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>持续集成</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目篇</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="常见的列表实现原理"><a href="#常见的列表实现原理" class="header-anchor">#</a> 常见的列表实现原理：</h2> <h3 id="arraylist实现原理"><a href="#arraylist实现原理" class="header-anchor">#</a> ArrayList实现原理：</h3> <p>​     底层还是数组，首先在构造方法中初始化一个默认的大小的数组在有参构造中初始化一个可以指定的大小
+​        添加：</p> <p>​            循环遍历数组，在都未放数据的时候初始化list的可放数据长度，
+​            在index==-1时，说明要进行扩容，创建新的数组，使得他的长度为原来的2倍 ，将原来的数组中的数据copy到新的数组，这里
+​            是用的System中的类进行copy的<br>
+​            同样也可以创建之后使用循环遍历然后添加到新的数组中，
+​            并将新的引用指向旧的引用，同时对最后一个进行赋值
+​            如没有则进行对其的直接添加</p> <p>​        删除：更具下标删除</p> <p>​            创建一个新的对象然后令这个对象的这个index赋值为null,最终使其返回
+​            另一种是直接把其的对象设置为小的就可以了</p> <p>​        修改：</p> <p>​            获得这个指定的下标的数组的数据，然后令其为新的数据，最后返回这个修改后的引用</p> <p>​        查找：</p> <p>​            直接通过下标返回其对对应的数据</p> <p>​        查看：</p> <p>​            通过瞎混遍历就可以进行给显示</p> <h3 id="linkedlist的实现原理"><a href="#linkedlist的实现原理" class="header-anchor">#</a> LinkedList的实现原理：</h3> <p>​        需要一个节点对象；
+​        节点对象的实现：
+​            需要数据域，和指针域，前一个指针域
+​        链表需要初始化：
+​            初石化头结点；
+​        插入节点：
+​            创建一个node节点，然后把下一个节点指向添加的节点，然后把节点给头结点
+​        删除头节点：
+​            先把头结点的数据给找到，然后令这个节点指向下一个节点：
+​             Node temp=first;//然后把这个节点指向第一个节点first=temp.next;return temp;<br>
+​        显示：
+​            把当前节点指向头结点，当前界定啊不为null时，显示出data，让当前的节点指向下一个节点
+​        查找：
+​            通过value查找，一直循环到等于这个值时，当下个节点为null，停止，当前节点，指向下一个节点，并返回节点
+​        删除：
+​            删除的时候需要知道当前节点的，和当前节点的前一个节点，
+​            令当前节点指向前一个节点，并让当前节点指向下一个节点，</p> <h3 id="双端链表"><a href="#双端链表" class="header-anchor">#</a> 双端链表：</h3> <p>​        需要初始化头结点和尾节点
+​        插入节点：
+​                头结点插入：
+​                    从头结点后进行插入 要对链表判断，判断是否weinul。如果weinull.则设置尾结点为新添加的结点；</p> <p>​            尾节点插入：
+​                从尾节点进行插入，判断是否为null，为空设置头结点为当前节点，否者令其last的下一个节点为当前插入的节点，
+​                将last节点置位当前插入的节点
+​    头结点删除：
+​        从头部删除的第一个节点:判断头结点是否有下一个结点，如果没有则设置尾节点为null
+​        令头结点的下个节点为当前的头结点并将其返回
+​    查找：通过值查找
+​        令其当前节点为头结点，循环判断当前节点的值时否相同，当下一个节点为null则终止循环，当前元素指向下一个元素
+​    删除返回
+​        删除的时候需要知道当前节点的，和当前节点的前一个节点，
+​        令当前节点指向前一个节点，并让当前节点指向下一个节点，</p> <h3 id="双向链表"><a href="#双向链表" class="header-anchor">#</a> 双向链表：</h3> <p>​    插入节点：<br>
+​        从头结点后进行插入 ：
+​            要对链表判断，判断是否weinul。如果weinull.则设置尾结点为新添加的结点；，如果不为null，设置头结点的前一个结点为新添加的结点
+​        从尾节点插入：
+​            从尾节点进行插入：如果链表为null则直接设置头结点为新添加的结点，否则设置尾结点的后一个结点为新添加结点，同时设置新添加的节点的前一个结点为尾结点<br>
+​    删除：<br>
+​        从头结点删除：
+​            从头部删除的第一个节点:判断头结点是否有下一个结点，如果没有则设置尾节点为null,否则设置头结点的下一个结点的previous为null;
+​        尾节点删除：
+​            判断头结点是否有下一个结点，如果没有则设置头节点为null,否则设置尾结点的下一个结点的next为null;
+​    查找：通过值查找
+​        令其当前节点为头结点，循环判断当前节点的值时否相同，当下一个节点为null则终止循环，当前元素指向下一个元素
+​    删除返回数据
+​        删除的时候需要知道当前节点的，和当前节点的前一个节点，
+​        令当前节点指向前一个节点，并让当前节点指向下一个节点，</p> <h3 id="队列"><a href="#队列" class="header-anchor">#</a> 队列：</h3> <p>​    实现主要是数组，包含队头和队尾，
+​    有参构造和无参构造：初始化对列，初始化有效数据，初始化队列的长度
+​    添加： 只能从队尾添加
+​        将队尾指向最后一个元素时再添加时则会越界，否则令其数据的队尾添加，同时有效长度，增加
+​    删除：只能从队头删除
+​        直接删除对头的元素，同时把有效长度减1，并返回当前删除的value
+​    查看数居：
+​        返回当前队头的元素</p> <h3 id="数组"><a href="#数组" class="header-anchor">#</a> 数组：</h3> <p>​    通过定义一个数组，定义一个数据的有效长度，并通过有参构造，和无参构造方式，初始化数组，
+​    添加：
+​        让其arry[有效长度]=value,并使得当前的有效长度增加
+​    查找：返回下标
+​        通过遍历有效长度中的每一个值，如果有的话返回，如果没有则返回-1；
+​    查找：通过索引查找
+​        通过判断索引的值，直接返回当前索引的值
+​    删除： 通过下标删除
+​        通过遍历让当前下标的后一个指向当前数据，长度-1.
+​    更新：
+​        通过下标和值，，直接设置当前下标的值为新的值</p> <h3 id="栈"><a href="#栈" class="header-anchor">#</a> 栈：</h3> <p>​    底层是一个数数组：
+​    初始化数组的大小和当前的栈顶元素
+​    添加数据：
+​        直接栈顶指针增加并赋值为当前插入的值
+​    删除数据：
+​        只能从栈顶删除：让其栈顶指针-1；
+​    查看数据：
+​        arry[top]</p> <h3 id="树"><a href="#树" class="header-anchor">#</a> 树：</h3> <p>树的概念：</p> <ul><li>路径：顺着连接节点的边从一个节点到另一个节点，所经历的节点顺序</li> <li>根节点：树最上面的节点称为根节点，一棵树只有一个根，而且根到任何一个节点有且只有一条路径</li> <li>父节点：每个节点都有一条边向上连接到另一个节点，这个节点就称是下面的节点的父节点</li> <li>子节点：每个节点都有一条边向下连接到另一个节点，下面的节点称为该节点的子节点</li> <li>叶子节点：没有子节点的节点称为叶子节点</li> <li>子树：每个节点都可以作为一个子树的根，它和它所有的子节点，子节点的节点组合起来就是一个子树</li> <li>遍历：先序，中序，后序</li> <li>前序：1.访问根节点,2，左子树，3.右子树</li> <li>中序：左 ，根， 右</li> <li>后序 左，右，根</li> <li>访问：访问一个节点是为了在这个节点上执行一些操作，如查看节点的数据项，但是如果仅仅是经过一个节点，不认为是访问了这个节点</li> <li>层:一个节点的层数是指从根节点开始到这个节点有多少代</li></ul> <h4 id="二叉树"><a href="#二叉树" class="header-anchor">#</a> 二叉树</h4> <p>树的节点最多有两个子节点，称为二叉树
+初始化二叉树：在节点中需要有以下：
+//数据项public long data;
+//数据项public String sdata;
+//左子节点public TreeNode leftChild;
+//右子节点public TreeNode rightChild;
+插入节点：<br>
+从根节点开始查找一个相应的节点，这个节点将称为新插入的节点的父节点。当父节点找到后通过判断新节点值的大小决定连接在左节点还是右节点<br>
+先封装节点，然后让其当前节点为root，父节点为parent=null;
+判断是否为root==null如果为null则是第一个节点，则就是根节点
+否者循环对比是往左侧走，还是右侧走，将父节点为当前节点，
+如果插入的节点数据比当前节点的数据小向左走
+current =current.leftChild；如果当前的为null,则让其父节点的左子树为当前节点，然后返回
+如果为插入的节点比当前节点的数据大，往右走
+current=current.rightChild;如果当前的为null,则让其父节点的右子树为当前节点，然后返回
+查找节点：
+从根节点开始查找一个相应的节点，在比较当前节点和要查找的节点，引用当前节点，从根节点开始，只要查找的节点不等于当前节点的数据项
+//进行比较，小于value则在右子树查找，否则在左边查找
+让其当前节点为current=current.leftChild;或者=current.rightChild;
+最后返回当前节点
+删除头节点：
+删除之前首先要查找要删的节点，找到节点后，这个删除的节点可能有以下情况</p> <ul><li><p>1.该节点是叶子节点，没有子节点：要删除叶节点，只需改变该节点的父节点的引用，将指向该节点的引用设置为null就可以了</p></li> <li><p>2.该节点有一个子节点：改变父节点的引用，将其指向要删除的节点的子节点、</p></li> <li><p>3.该节点有两个子节点，要删除有两个子节点的节点，就需要使用它的中序后继来替代该节点<br>
+遍历：1.访问根节点，2.访问左子树，3.访问右子树
+传入当前的节点，访问根节点，前序遍历左子树，前序遍历右子树</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token function">front</span><span class="token punctuation">(</span><span class="token class-name">TreeNode</span> localNode<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token comment">//访问根节点</span>
+     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>localNode<span class="token punctuation">.</span>data<span class="token operator">+</span><span class="token string">&quot;,&quot;</span><span class="token operator">+</span>localNode<span class="token punctuation">.</span>sdata<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">front</span><span class="token punctuation">(</span>localNode<span class="token punctuation">.</span>leftChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">front</span><span class="token punctuation">(</span>localNode<span class="token punctuation">.</span>rightChild<span class="token punctuation">)</span><span class="token punctuation">;</span>   
+   <span class="token punctuation">}</span>
+    <span class="token comment">//中序遍历：左，根，右</span>
+  <span class="token function">center</span><span class="token punctuation">(</span><span class="token class-name">TreeNode</span> localNode<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token function">center</span><span class="token punctuation">(</span>localNode<span class="token punctuation">.</span>leftChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//访问根节点</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>localNode<span class="token punctuation">.</span>data<span class="token operator">+</span><span class="token string">&quot;,&quot;</span><span class="token operator">+</span>localNode<span class="token punctuation">.</span>sdata<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">center</span><span class="token punctuation">(</span>localNode<span class="token punctuation">.</span>rightChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+    <span class="token comment">// 后序遍历：左右根</span>
+  <span class="token function">last</span><span class="token punctuation">(</span><span class="token class-name">TreeNode</span> localNode<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token function">last</span><span class="token punctuation">(</span>localNode<span class="token punctuation">.</span>leftChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">last</span><span class="token punctuation">(</span>localNode<span class="token punctuation">.</span>rightChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//访问根节点</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>localNode<span class="token punctuation">.</span>data<span class="token operator">+</span><span class="token string">&quot;,&quot;</span><span class="token operator">+</span>localNode<span class="token punctuation">.</span>sdata<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+  <span class="token punctuation">}</span>
+</code></pre></div><p>底层用linklist[]数组实现
+先进行初始化数组的大小
+进行hashcode的来实现对其hash化：</p></li> <li><p>1直接将关键字作为索引，</p></li> <li><p>将字母转换为AscII吗然后进行相加</p></li> <li><p>幂的连乘</p></li> <li><p>压缩可选值
+开放地址法。链地址法
+插入数据:
+通过关键字来插入数据，其中数据包括关键字和数据添加，
+查找数据：
+通过hashcode来返回</p> <p>中能够快速的查找数据项，和插入数据项，删除数据项</p></li></ul> <h3 id="图"><a href="#图" class="header-anchor">#</a> 图：</h3> <p>图是一种和树想象的数据结构，通常有固定的形状</p> <p>图是由顶点的有穷非空集合和顶点之间边的集合组成，通过表示为G(V,E)，其中，G标示一个图，V是图G中顶点的集合，E是图G中边的集合。</p> <ul><li>无边图：若顶点Vi到Vj之间的边没有方向，则称这条边为无项边（Edge），用序偶对(Vi,Vj)标示。对于下图无向图G1来说，G1=(V1, {E1})，其中顶点集合V1={A,B,C,D}；边集合E1={(A,B),(B,C),(C,D),(D,A),(A,C)}:</li> <li>有向图：若从顶点Vi到Vj的边是有方向的，则成这条边为有向边，也称为弧（Arc）。用有序对（Vi，Vj）标示，Vi称为弧尾，Vj称为弧头。如果任意两条边之间都是有向的，则称该图为有向图。</li></ul> <h4 id="图的存储结构"><a href="#图的存储结构" class="header-anchor">#</a> 图的存储结构：</h4> <p>邻接矩阵：</p> <p>邻接表：</p> <h4 id="图的遍历"><a href="#图的遍历" class="header-anchor">#</a> 图的遍历：</h4> <p>从图中某个顶点出发访遍图中其余顶点，且使每个顶点仅被访问依次，这一过程叫做图的遍历.
+遍历方法：
+深度优先遍历和广度优先遍历</p> <h5 id="深度优先遍历"><a href="#深度优先遍历" class="header-anchor">#</a> 深度优先遍历</h5> <p>图中某个顶点出发v出发，访问此顶点，然后从v的未被访问的邻接点出发深度优先便利图，知道图中所有和v有相同路径的顶点都被访问 由顶点一直向下搜索</p> <p>1.如果可能，访问一个邻接的未访问过的顶点，标记他并把它放入到栈中，
+2.如果不能执行1时，如果栈不为null，就充栈中弹出一个顶点
+3.当不能执行1和2，时就完成了整个搜索过程</p> <h5 id="广度优先遍历"><a href="#广度优先遍历" class="header-anchor">#</a> 广度优先遍历</h5> <p>​      广度优先遍历（Breadth_First_Search）又称为广度优先搜索，简称BFS。 实现一个图必须包括一个顶点类：
+其中包括lable，和是否被访问过：</p> <p>一层一层的搜索
+1.访问下一个邻接的未访问过的顶点，这个顶点必须是当前节点的邻接点标记他，并且，把它插入到队列中
+2，如果无法执行规则1，那么久从队列头取出一个顶点，并使其作为当前顶点，
+3，当队列不能执行规则2时，就完成了整个搜索过程       初始化 时需要顶点数组，邻接矩阵数组，顶点的最大数目，当前顶点，栈，
+初始化图：</p> <div class="language-JAVA extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token class-name">Graph</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          vertexList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vertex</span><span class="token punctuation">[</span>maxSize<span class="token punctuation">]</span><span class="token punctuation">;</span>
+          adjMat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>maxSize<span class="token punctuation">]</span><span class="token punctuation">[</span>maxSize<span class="token punctuation">]</span><span class="token punctuation">;</span>
+          <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> maxSize<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> maxSize<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                  adjMat<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+          nVertex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+          stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    添加顶点：
+      vertexList<span class="token punctuation">[</span>nVertex<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Vertex</span><span class="token punctuation">(</span>label<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    添加边：
+      adjMatstart<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+      adjMatend<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+</code></pre></div><h2 id="排序"><a href="#排序" class="header-anchor">#</a> 排序：</h2> <h3 id="冒泡排序"><a href="#冒泡排序" class="header-anchor">#</a> 冒泡排序：</h3> <p>​      思想左右对比，然后是对应的左面大的话不动，
+​</p> <div class="language-java extra-class"><pre class="language-java"><code> <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">bubblesort</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> arry<span class="token punctuation">)</span><span class="token punctuation">{</span>
+          <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arry<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>arry<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&gt;</span>i<span class="token punctuation">;</span>j<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                  <span class="token keyword">if</span> <span class="token punctuation">(</span>arry<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&lt;</span>arry<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                      <span class="token comment">//进行交换</span>
+                      <span class="token keyword">long</span> temp<span class="token punctuation">;</span>
+                      temp<span class="token operator">=</span>arry<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                     arry<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>arry<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                      arry<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
+                  <span class="token punctuation">}</span>
+              <span class="token punctuation">}</span> 
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+</code></pre></div><h3 id="快速排序"><a href="#快速排序" class="header-anchor">#</a> 快速排序：</h3> <p>通过一个数组划分为若干个子数组，然后通过递归调用自身为每一个子数组进行快速排序</p> <p>设定关键字比关键字大的设定为一组，比关键字小的放为一组，设置数组最右端的数据为关键字</p> <h3 id="选择排序"><a href="#选择排序" class="header-anchor">#</a> 选择排序：</h3> <p>​      从未排的序列中找最大或最小的元素，存放在序列的起始位置，然后再从剩余的未排序元素中继续寻找最小的(大)的元素，然后放到已排序序列的末位</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">selectSort</span><span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arry<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">long</span> temp<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arry<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          k<span class="token operator">=</span>i<span class="token punctuation">;</span><span class="token comment">//k指向（每次循环的首个）</span>
+          <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token punctuation">;</span>j<span class="token operator">&lt;</span>arry<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>arry<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&lt;</span>arry<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                  k<span class="token operator">=</span>j<span class="token punctuation">;</span>
+              <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+          <span class="token comment">//指向的为最小的数据</span>
+          temp<span class="token operator">=</span>arry<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+          arry<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>arry<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+          arry<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="插入排序"><a href="#插入排序" class="header-anchor">#</a> 插入排序：</h3> <p>​      通过构建一个有序数列，对于未排序的数据在已排序的数据中进行向前扫描，找到相应的位置插入，通常采用in-place排序，因而在从后向前扫描过程中，需要反复
+​      把已排序元素逐步向后挪位，为新的元素提供插入的空间。
+​      缺陷：假如很小的数据在靠右端的位置，那么要将该数据排序到正确的位置上，则所有的中间的数据都需要向右移动
+​</p> <div class="language-java extra-class"><pre class="language-java"><code> <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">insertsort</span><span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">[</span><span class="token punctuation">]</span>  arry<span class="token punctuation">)</span><span class="token punctuation">{</span>
+          <span class="token comment">//从数组的2号位置开始 i=1;</span>
+          <span class="token keyword">long</span> temp<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+          <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arry<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+              temp<span class="token operator">=</span>arry<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//指向当前的这个</span>
+              <span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token punctuation">;</span>
+              <span class="token keyword">while</span> <span class="token punctuation">(</span>j<span class="token operator">&gt;</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> arry<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&gt;=</span>temp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                 arry<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>arry<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//右移</span>
+                  j<span class="token operator">--</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span>
+              arry<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>    
+</code></pre></div><p>​</p> <h3 id="希尔排序"><a href="#希尔排序" class="header-anchor">#</a> 希尔排序：</h3> <p>通过加大插入排序中元素之间的间隔，并对这些间隔的元素，进行插入排序，从而使得数据可以大浮动的，当完成该间隔的排序后，希尔排序会减少数据的间隔在进行排序，依次进行下去</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">shellsort</span><span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arry<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment">//初始化一个间隔</span>
+  <span class="token keyword">int</span> h<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+  <span class="token comment">//计算最大间隔</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>h<span class="token operator">&lt;</span>arry<span class="token punctuation">.</span>length<span class="token operator">/</span><span class="token number">3</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+      h<span class="token operator">=</span>h<span class="token operator">*</span><span class="token number">3</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">while</span><span class="token punctuation">(</span>h<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">//进行插入排序</span>
+      <span class="token keyword">long</span> temp<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>h<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arry<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          temp<span class="token operator">=</span>arry<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//指向当前的这个</span>
+          <span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token punctuation">;</span>
+          <span class="token keyword">while</span> <span class="token punctuation">(</span>j<span class="token operator">&gt;</span> h<span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> arry<span class="token punctuation">[</span>j<span class="token operator">-</span>h<span class="token punctuation">]</span><span class="token operator">&gt;=</span>temp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              arry<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>arry<span class="token punctuation">[</span>j<span class="token operator">-</span>h<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//右移</span>
+              j<span class="token operator">-=</span>h<span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+          arry<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>	
+      <span class="token comment">//减小间隔</span>
+      h<span class="token operator">=</span><span class="token punctuation">(</span>h<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">3</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vue-press/guide/JavaWeb开发.html" class="prev">
+        javaweb开发
+      </a></span> <span class="next"><a href="/vue-press/guide/数据结构与算法实战.html">
+        数据结构与算法实战
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/vue-press/assets/js/app.98d8bef1.js" defer></script><script src="/vue-press/assets/js/2.c05b7fa4.js" defer></script><script src="/vue-press/assets/js/60.cd59e3e3.js" defer></script>
+  </body>
+</html>

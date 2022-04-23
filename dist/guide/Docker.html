@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Docker | 面向对象Coding</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <script>
+            var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?634681ee52ddf5b1f6ff2c69397bda83";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();
+            
+            </script>
+    <meta name="description" content="oopCoding">
+    
+    <link rel="preload" href="/vue-press/assets/css/0.styles.a7b48b74.css" as="style"><link rel="preload" href="/vue-press/assets/js/app.98d8bef1.js" as="script"><link rel="preload" href="/vue-press/assets/js/2.c05b7fa4.js" as="script"><link rel="preload" href="/vue-press/assets/js/11.abd4cee0.js" as="script"><link rel="prefetch" href="/vue-press/assets/js/10.b0b1ab29.js"><link rel="prefetch" href="/vue-press/assets/js/12.f01bacfb.js"><link rel="prefetch" href="/vue-press/assets/js/13.6a0336ae.js"><link rel="prefetch" href="/vue-press/assets/js/14.4c7cd103.js"><link rel="prefetch" href="/vue-press/assets/js/15.14cf8099.js"><link rel="prefetch" href="/vue-press/assets/js/16.99b7d4e9.js"><link rel="prefetch" href="/vue-press/assets/js/17.af74b641.js"><link rel="prefetch" href="/vue-press/assets/js/18.41eaaad6.js"><link rel="prefetch" href="/vue-press/assets/js/19.2c3afb01.js"><link rel="prefetch" href="/vue-press/assets/js/20.f7169a2a.js"><link rel="prefetch" href="/vue-press/assets/js/21.df897cd1.js"><link rel="prefetch" href="/vue-press/assets/js/22.7034a423.js"><link rel="prefetch" href="/vue-press/assets/js/23.2386b7c7.js"><link rel="prefetch" href="/vue-press/assets/js/24.b6941784.js"><link rel="prefetch" href="/vue-press/assets/js/25.23a7fa69.js"><link rel="prefetch" href="/vue-press/assets/js/26.4b1a82de.js"><link rel="prefetch" href="/vue-press/assets/js/27.0be638cf.js"><link rel="prefetch" href="/vue-press/assets/js/28.e8d5a161.js"><link rel="prefetch" href="/vue-press/assets/js/29.c4f336ea.js"><link rel="prefetch" href="/vue-press/assets/js/3.8ea11f8e.js"><link rel="prefetch" href="/vue-press/assets/js/30.4b94204f.js"><link rel="prefetch" href="/vue-press/assets/js/31.cf1f58fa.js"><link rel="prefetch" href="/vue-press/assets/js/32.823894a0.js"><link rel="prefetch" href="/vue-press/assets/js/33.e33d865a.js"><link rel="prefetch" href="/vue-press/assets/js/34.df71d62e.js"><link rel="prefetch" href="/vue-press/assets/js/35.51f1121b.js"><link rel="prefetch" href="/vue-press/assets/js/36.4d01d025.js"><link rel="prefetch" href="/vue-press/assets/js/37.67293f42.js"><link rel="prefetch" href="/vue-press/assets/js/38.97f67132.js"><link rel="prefetch" href="/vue-press/assets/js/39.fd0ea0f5.js"><link rel="prefetch" href="/vue-press/assets/js/4.5a363195.js"><link rel="prefetch" href="/vue-press/assets/js/40.fce62c8f.js"><link rel="prefetch" href="/vue-press/assets/js/41.46c1dfe2.js"><link rel="prefetch" href="/vue-press/assets/js/42.2f6a3352.js"><link rel="prefetch" href="/vue-press/assets/js/43.f2cb40b0.js"><link rel="prefetch" href="/vue-press/assets/js/44.08a1d863.js"><link rel="prefetch" href="/vue-press/assets/js/45.66f1bbbc.js"><link rel="prefetch" href="/vue-press/assets/js/46.f063949d.js"><link rel="prefetch" href="/vue-press/assets/js/47.33d1f41f.js"><link rel="prefetch" href="/vue-press/assets/js/48.04699801.js"><link rel="prefetch" href="/vue-press/assets/js/49.7cd3afd3.js"><link rel="prefetch" href="/vue-press/assets/js/5.dfff2508.js"><link rel="prefetch" href="/vue-press/assets/js/50.c3c8025f.js"><link rel="prefetch" href="/vue-press/assets/js/51.7d2ddfde.js"><link rel="prefetch" href="/vue-press/assets/js/52.fff13010.js"><link rel="prefetch" href="/vue-press/assets/js/53.3da6148c.js"><link rel="prefetch" href="/vue-press/assets/js/54.31dd89fc.js"><link rel="prefetch" href="/vue-press/assets/js/55.b61bd458.js"><link rel="prefetch" href="/vue-press/assets/js/56.9ba07af1.js"><link rel="prefetch" href="/vue-press/assets/js/57.82769901.js"><link rel="prefetch" href="/vue-press/assets/js/58.477544ce.js"><link rel="prefetch" href="/vue-press/assets/js/59.880ff808.js"><link rel="prefetch" href="/vue-press/assets/js/6.efb1059d.js"><link rel="prefetch" href="/vue-press/assets/js/60.cd59e3e3.js"><link rel="prefetch" href="/vue-press/assets/js/61.7d844834.js"><link rel="prefetch" href="/vue-press/assets/js/62.c5598e7a.js"><link rel="prefetch" href="/vue-press/assets/js/63.9fcdb7e3.js"><link rel="prefetch" href="/vue-press/assets/js/64.59160257.js"><link rel="prefetch" href="/vue-press/assets/js/65.e9c8b285.js"><link rel="prefetch" href="/vue-press/assets/js/66.782d1533.js"><link rel="prefetch" href="/vue-press/assets/js/67.a0f784ed.js"><link rel="prefetch" href="/vue-press/assets/js/7.fdc9ea19.js"><link rel="prefetch" href="/vue-press/assets/js/8.e2255c5a.js"><link rel="prefetch" href="/vue-press/assets/js/9.f026067a.js">
+    <link rel="stylesheet" href="/vue-press/assets/css/0.styles.a7b48b74.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vue-press/" class="home-link router-link-active"><!----> <span class="site-name">面向对象Coding</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vue-press/guide/" class="nav-link router-link-active">
+  指南
+</a></div><div class="nav-item"><a href="/vue-press/interview/" class="nav-link">
+  面试宝典
+</a></div><div class="nav-item"><a href="/vue-press/wechat/" class="nav-link">
+  公号文章
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工具" class="dropdown-title"><span class="title">后端工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工具" class="mobile-dropdown-title"><span class="title">后端工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.vuepress.vuejs.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vuepress
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://mvnrepository.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  maven
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工具" class="dropdown-title"><span class="title">前端工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工具" class="mobile-dropdown-title"><span class="title">前端工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https//www.vuepress.org.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vuepress
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.vue.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vue
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="/changeLog/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  changeLog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vue-press/guide/" class="nav-link router-link-active">
+  指南
+</a></div><div class="nav-item"><a href="/vue-press/interview/" class="nav-link">
+  面试宝典
+</a></div><div class="nav-item"><a href="/vue-press/wechat/" class="nav-link">
+  公号文章
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工具" class="dropdown-title"><span class="title">后端工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工具" class="mobile-dropdown-title"><span class="title">后端工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.vuepress.vuejs.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vuepress
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://mvnrepository.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  maven
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工具" class="dropdown-title"><span class="title">前端工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工具" class="mobile-dropdown-title"><span class="title">前端工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https//www.vuepress.org.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vuepress
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.vue.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vue
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="/changeLog/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  changeLog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Guide</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>高级</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>开发记录问题</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>持续集成</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vue-press/guide/Docker.html" aria-current="page" class="active sidebar-link">Docker</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#简介" class="sidebar-link">简介</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#为什么使用docker" class="sidebar-link">为什么使用docker:</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker引擎" class="sidebar-link">Docker引擎：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker系统镜像" class="sidebar-link">Docker系统镜像：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker容器" class="sidebar-link">Docker容器：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker仓库" class="sidebar-link">Docker仓库：</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#ubuntu安装docker" class="sidebar-link">ubuntu安装docker:</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#ubuntu脚本自动安装" class="sidebar-link">ubuntu脚本自动安装：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#ubuntu安装镜像加速器" class="sidebar-link">ubuntu安装镜像加速器：</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#centos安装docker" class="sidebar-link">Centos安装Docker</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#centos命令安装" class="sidebar-link">centos命令安装</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#dockerfile" class="sidebar-link">DockerFile：</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#dokerfile指令" class="sidebar-link">DokerFile指令</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#dockerfile轻量化方式" class="sidebar-link">DockerFile轻量化方式</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#使用上下文环境构建" class="sidebar-link">使用上下文环境构建：</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker数据卷" class="sidebar-link">Docker数据卷：</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#查看数据卷的信息" class="sidebar-link">查看数据卷的信息：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#删除数据卷" class="sidebar-link">删除数据卷：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#无主的数据卷的删除用以下命令清理" class="sidebar-link">无主的数据卷的删除用以下命令清理：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#实例共享数据卷" class="sidebar-link">实例共享数据卷：</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker镜像" class="sidebar-link">Docker镜像：</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker下载镜像" class="sidebar-link">docker下载镜像：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker镜像操作" class="sidebar-link">Docker镜像操作</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#虚悬镜像" class="sidebar-link">虚悬镜像：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#删除虚悬镜像" class="sidebar-link" style="padding-left:3rem;">删除虚悬镜像：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#查看中间层镜像" class="sidebar-link" style="padding-left:3rem;">查看中间层镜像：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#删除指定的镜像" class="sidebar-link" style="padding-left:3rem;">删除指定的镜像：</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-容器" class="sidebar-link">Docker 容器</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-容器命令操作" class="sidebar-link">Docker 容器命令操作</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker构建tomact" class="sidebar-link">Docker构建tomact:</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker构建mysql" class="sidebar-link">Docker构建mysql:</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#出现的错误" class="sidebar-link">出现的错误：</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker构建oracle" class="sidebar-link">Docker构建oracle</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#oracle中的sys用户和system用户的区别" class="sidebar-link" style="padding-left:3rem;">oracle中的sys用户和system用户的区别：</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose" class="sidebar-link">Docker Compose:</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#安装docker-compose" class="sidebar-link">安装docker compose:</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#安装docker" class="sidebar-link" style="padding-left:3rem;">安装docker：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#卸载docker-compose" class="sidebar-link">卸载docker compose:</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose-使用" class="sidebar-link">Docker Compose 使用：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#模板文件" class="sidebar-link" style="padding-left:3rem;">模板文件：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose命令" class="sidebar-link">Docker compose命令：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose实战nginx" class="sidebar-link">Docker compose实战Nginx</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose实战tomcat" class="sidebar-link">Docker compose实战tomcat:</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose-实战mysql5" class="sidebar-link">Docker compose 实战mysql5：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose-实战oracle" class="sidebar-link">Docker compose 实战oracle</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose-实战rabbitmq" class="sidebar-link">Docker compose 实战RabbitMQ</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose-实战rocketmq" class="sidebar-link">Docker compose 实战RocketMq</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose实战redis" class="sidebar-link">Docker compose实战Redis:</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose实战redis集群" class="sidebar-link">Docker compose实战Redis集群:</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#修改sentinel文件" class="sidebar-link" style="padding-left:4rem;">修改Sentinel文件：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#启动集群" class="sidebar-link" style="padding-left:4rem;">启动集群：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#查看集群是否生效" class="sidebar-link" style="padding-left:4rem;">查看集群是否生效：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose实战fastdfs" class="sidebar-link">Docker compose实战FastDFS</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose实战dubbo-zookeeper" class="sidebar-link">Docker compose实战Dubbo zookeeper</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#单机模式" class="sidebar-link" style="padding-left:5rem;">单机模式</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose实战zookeeper集群-有问题-未解决" class="sidebar-link">Docker compose实战zookeeper集群 （有问题 -未解决）</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose实战-gitlab" class="sidebar-link">Docker compose实战 gitlab</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose实战-nexus" class="sidebar-link">Docker compose实战 nexus</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose-实战elasticsecarch" class="sidebar-link">Docker compose 实战ElasticSecarch</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-compose編排容器" class="sidebar-link">Docker compose編排容器</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-registry" class="sidebar-link">Docker-Registry:</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#docker-私服" class="sidebar-link">Docker 私服：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#测试镜像上传" class="sidebar-link">测试镜像上传：</a></li><li class="sidebar-sub-header"><a href="/vue-press/guide/Docker.html#在客户端中docker-compose中使用这个" class="sidebar-link">在客户端中docker-compose中使用这个：</a></li></ul></li></ul></li><li><a href="/vue-press/guide/Git.html" class="sidebar-link">Git</a></li><li><a href="/vue-press/guide/Java8新特性.html" class="sidebar-link">Docker</a></li><li><a href="/vue-press/guide/Linux 操作.html" class="sidebar-link">Linux</a></li><li><a href="/vue-press/guide/Lucene&amp;Solr.html" class="sidebar-link">Lucene&amp;Solr</a></li><li><a href="/vue-press/guide/MQ.html" class="sidebar-link">MQ</a></li><li><a href="/vue-press/guide/Netty.html" class="sidebar-link">Netty</a></li><li><a href="/vue-press/guide/Nginx.html" class="sidebar-link">Nginx</a></li><li><a href="/vue-press/guide/Oracle.html" class="sidebar-link">Oracle</a></li><li><a href="/vue-press/guide/POI&amp;pinyin4j.html" class="sidebar-link">POI&amp;PINYIN4j</a></li><li><a href="/vue-press/guide/python.html" class="sidebar-link">Python</a></li><li><a href="/vue-press/guide/python+appium自动化测试.html" class="sidebar-link">Appium+python自动化测试</a></li><li><a href="/vue-press/guide/python+selenium网页自动化测试.html" class="sidebar-link">python+selenium网页自动化测试</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目篇</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="docker"><a href="#docker" class="header-anchor">#</a> Docker</h1> <h2 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h2> <p>Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中， 然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。 容器是完全使用沙箱机制，相互之间不会有任何接口,更重要的是容器性能开销极低。</p> <p>​	Docker支持将软件编译成一个镜像；然后 在镜像中各种软件做好配置，将镜像发布 出去，其他使用者可以直接使用这个镜像。运行中的这个镜像称为容器，容器启动是 非常快速的。类似windows里面的ghost操 作系统，安装好后什么都有了</p> <h3 id="为什么使用docker"><a href="#为什么使用docker" class="header-anchor">#</a> 为什么使用docker:</h3> <p>由于容器不需要进行硬件虚拟以及运行完整操作系统等额外开销，Docker 对系统资源的利用率更高。无论是应用执行速度、内存损耗或者文件存储速度，都要比传统虚拟机技术更高效。因此，相比虚拟机技术，一个相同配置的主机，往往可以运行更多数量的应用。</p> <ul><li>更快速的启动时间</li> <li>一致的运行环境</li> <li>持续交互和部署</li> <li>更轻松的迁移</li> <li>更轻松的维护和扩展</li></ul> <h3 id="docker引擎"><a href="#docker引擎" class="header-anchor">#</a> Docker引擎：</h3> <p><code>是一个包含以下主要组件的客户端服务器的应用程序</code></p> <ul><li>一种服务器，他是一个称为守护进程并且长时间运行的程序</li> <li>Rest ApI用于指定程序可以用来与守护进程通信的接口，并指示它做什么</li> <li>一个有命令行界面工具的客户端</li></ul> <h3 id="docker系统镜像"><a href="#docker系统镜像" class="header-anchor">#</a> Docker系统镜像：</h3> <ul><li>Docker镜像(Images)：Docker 镜像是用于创建Docker 容器的 模板。</li> <li>Docker容器(Container)：容器是独立运行的一个或一组应用。</li> <li>Docker客户端(Client)：客户端通过命令行或者其他工具使用 Docker API(https://docs.docker.com/reference/api/docker_remote_api) 与Docker 的守护进程通信 docker主机(Host)：一个物理或者虚拟的机器用于执行 Docker 守护进程和容器。</li> <li>Docker仓库(Registry)：Docker 仓库用来保存镜像，可以理解 为代码控制中的代码仓库。Docker Hub(https://hub.docker.com) 提供了庞大的镜像集合供使用</li></ul> <h3 id="docker容器"><a href="#docker容器" class="header-anchor">#</a> Docker容器：</h3> <p>Docker容器是docker运行的实体，容器可以被创建，启动，停止，删除，暂停等
+容器的实质是进程，但与直接在宿主执行的进程不同，容器进程运行于属于自己的独立的 命名空间。因此容器可以拥有自己的 root 文件系统、自己的网络配置、自己的进程空间，甚至自己的用户 ID 空间。容器内的进程是运行在一个隔离的环境里，使用起来，就好像是在一个独立于宿主的系统下操作一样。容器不应该向其存储层内写入任何数据，容器存储层要保持无状态化。所有的文件写入操作，都应该使用 数据卷（Volume）、或者绑定宿主目录，在这些位置的读写会跳过容器存储层，直接对宿主（或网络存储）发生读写，其性能和稳定性更高。数据卷的生存周期独立于容器，容器消亡，数据卷不会消亡</p> <h3 id="docker仓库"><a href="#docker仓库" class="header-anchor">#</a> Docker仓库：</h3> <p>一个 Docker Registry 中可以包含多个仓库（Repository)；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。
+​通常，一个仓库会包含同一个软件不同版本的镜像，而标签就常用于对应该软件的各个版本。我们可以通过 &lt;仓库名&gt;:&lt;标签&gt; 的格式来指定具体是这个软件哪个版本的镜像。如果不给出标签，将以 latest 作为默认标签。</p> <h2 id="ubuntu安装docker"><a href="#ubuntu安装docker" class="header-anchor">#</a> ubuntu安装docker:</h2> <ul><li>命令:	<code>wget -q0- http://get.docker.com/ |sh</code></li> <li>启动：<code>sudo service docker start</code></li> <li>测试运行:  <code>docker run hello-world</code></li> <li>镜像加速:	 /etc/docker/daemon.json 在这里加入<code>{ &quot;registry-mirrors&quot;:[&quot;http://hub-mirror.c.163.com&quot;]}</code></li></ul> <div class="language-xml extra-class"><pre class="language-xml"><code>ubuntu安装：		
+		1.更换国内软件源，推荐中国科技大学的源，稳定速度快（可选）
+
+			sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+			sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g'
+			/etc/apt/sources.list
+			sudo apt update
+		2.安装需要的包
+			sudo apt install apt-transport-https ca-certificates software-properties-common curl
+		3.添加 GPG 密钥，并添加 Docker-ce 软件源，这里还是以中国科技大学的 Docker-ce 源为例
+			curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+			sudo add-apt-repository &quot;deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu \
+			$添加成功后更新软件包缓存安装设置开机自启动并启动（安装成功后默认已设置并启动，可忽略）测试运行添加当前用户到用户组，可以不用运行（可选）(lsb_release -cs) stable&quot;
+		4.添加成功后更新软件包缓存sudo apt update
+		5.安装 Docker-ce:::     sudo apt install docker-ce
+		6.设置开机自启动并启动 Docker-ce（安装成功后默认已设置并启动，可忽略）
+			sudo systemctl enable docker
+			sudo systemctl start docker
+		7.测试运行sudo docker run hello-world
+		8.添加当前用户到 docker 用户组，可以不用 sudo 运行 docker（可选）
+			sudo groupadd docker
+			sudo usermod -aG docker $USER
+		9.测试添加用户组（可选）docker run hello-world
+</code></pre></div><h3 id="ubuntu脚本自动安装"><a href="#ubuntu脚本自动安装" class="header-anchor">#</a> ubuntu脚本自动安装：</h3> <ul><li>1<code>.curl -fsSL get.docker.com -o get-docker.sh</code></li> <li>2.<code>sh get-docker.sh --mirror Aliyun</code>
+​			或者第二步使用：<code>sudo sh get-docker.sh --mirror AzureChinaCloud</code></li> <li>3.测试是否安装成功：
+​			<code>docker version</code></li></ul> <h3 id="ubuntu安装镜像加速器"><a href="#ubuntu安装镜像加速器" class="header-anchor">#</a> ubuntu安装镜像加速器：</h3> <p>镜像加速: 如果没有则创建这个文件：
+​		/etc/docker/daemon.json 在这里加入<code>{ &quot;registry-mirrors&quot;:[&quot;https://registry.docker-cn.com&quot;]}</code>
+重启服务：
+<code>​systemctl restart docker</code></p> <h2 id="centos安装docker"><a href="#centos安装docker" class="header-anchor">#</a> Centos安装Docker</h2> <h3 id="centos命令安装"><a href="#centos命令安装" class="header-anchor">#</a> centos命令安装</h3> <p>安装命令：<code>yum install docker</code></p> <p>检查是否安装成功: <code>docker version</code></p> <p>启动docker server: <code>systemctl start docker.service</code> 或者 <code>systemctl start docker</code></p> <p>设置docker开机自启：<code>systemctl enable docker.service</code></p> <p>安装wget命令 ：<code>yum -y install wget</code></p> <p>搜索一些包：<code>yum search java|grep jdk</code></p> <p>安装vim编辑器：<code>yum - y install vim*</code></p> <p>检查docker状态：<code>systemctl status docker</code></p> <p>停止docker:  <code>systemctl stop docker</code></p> <p><a href="https://imgchr.com/i/Dmy2E4" target="_blank" rel="noopener noreferrer"><img alt="Dmy2E4.png" data-src="https://s3.ax1x.com/2020/11/18/Dmy2E4.png" loading="lazy" class="lazy"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><strong>idea链接：</strong></p> <p><code>vim /usr/lib/systemd/system/docker.service</code> 找到 <code>ExecStart=/usr/bin/dockerd-current</code> 然后直接加入如下</p> <div class="language- extra-class"><pre class="language-text"><code>## ExecStart=/usr/bin/dockerd-current -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock \
+
+</code></pre></div><p><a href="https://imgchr.com/i/Dm6UsK" target="_blank" rel="noopener noreferrer"><img alt="Dm6UsK.png" data-src="https://s3.ax1x.com/2020/11/18/Dm6UsK.png" loading="lazy" class="lazy"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>然后进行重启：</p> <div class="language- extra-class"><pre class="language-text"><code>systemctl daemon-reload &amp;&amp; systemctl restart docker
+</code></pre></div><h2 id="dockerfile"><a href="#dockerfile" class="header-anchor">#</a> DockerFile：</h2> <p>镜像的定制实际上就是定制每一层所添加的配置、文件。如果我们可以把每一层修改、安装、构建、操作的命令都写入一个脚本，用这个脚本来构建、定制镜像，那么之前提及的无法重复的问题、镜像构建透明性的问题、体积的问题就都会解决</p> <p>dockerfile是一个文本文件，其内包含了一条条指令，每条指令构建一层，因此每条指令都应该描述如何构建.</p> <p><strong>注意：Dockerfile 的指令每执行一次都会在 docker 上新建一层。所以过多无意义的层，会造成镜像膨胀过大</strong></p> <p>在 /usr/local:</p> <p>​		创建docker目录，然后创建一个tomcat的dockerfile目录，</p> <p>​			<code>from:</code> 必须是第一条指令，用于指定基础的镜像</p> <p>​			<code>run</code> ：用于执行命令行命令，由于命令行的强大，</p> <p>命令有两种格式：shell格式:    exec格式：</p> <h3 id="dokerfile指令"><a href="#dokerfile指令" class="header-anchor">#</a> DokerFile指令</h3> <p>指令相对比较庞大 自行学习把，比较常用的有 <code>FROM，RUN，还提及了COPY,ADD</code></p> <p><a href="https://blog.csdn.net/wo18237095579/article/details/80540571?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#%E4%BD%BF%E7%94%A8-dockerfile-%E5%AE%9A%E5%88%B6%E9%95%9C%E5%83%8F" target="_blank" rel="noopener noreferrer">参考：dockfile定制镜像<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="dockerfile轻量化方式"><a href="#dockerfile轻量化方式" class="header-anchor">#</a> DockerFile轻量化方式</h3> <p><strong>下面的这个的dockerfile 是从 Debian &quot;jessie&quot;系统下构建一个编译、安装 redis 可执行文件。</strong></p> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">FROM</span> debian:jessie</span>
+
+<span class="token instruction"><span class="token keyword">RUN</span> apt-get update</span>
+<span class="token instruction"><span class="token keyword">RUN</span> apt-get install -y gcc libc6-dev make</span>
+<span class="token instruction"><span class="token keyword">RUN</span> wget -O redis.tar.gz <span class="token string">&quot;http://download.redis.io/releases/redis-3.2.5.tar.gz&quot;</span></span>
+<span class="token instruction"><span class="token keyword">RUN</span> mkdir -p /usr/src/redis</span>
+<span class="token instruction"><span class="token keyword">RUN</span> tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1</span>
+<span class="token instruction"><span class="token keyword">RUN</span> make -C /usr/src/redis</span>
+<span class="token instruction"><span class="token keyword">RUN</span> make -C /usr/src/redis install</span>
+</code></pre></div><p>Dockerfile 中每一个指令都会建立一层，<code>RUN</code> 也不例外。每一个 <code>RUN</code> 的行为，就和刚才我们手工建立镜像的过程一样：新建立一层，在其上执行这些命令，执行结束后，<code>commit</code> 这一层的修改，构成新的镜像。</p> <p>而上面的这种写法，创建了 7 层镜像。这是完全没有意义的，而且很多运行时不需要的东西，都被装进了镜像里，比如编译环境、更新的软件包等等。结果就是产生非常臃肿、非常多层的镜像，不仅仅增加了构建部署的时间，也很容易出错</p> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">FROM</span> debian:jessie</span>
+
+<span class="token instruction"><span class="token keyword">RUN</span> buildDeps=<span class="token string">'gcc libc6-dev make'</span> <span class="token operator">\</span>
+    &amp;&amp; apt-get update <span class="token operator">\</span>
+    &amp;&amp; apt-get install -y <span class="token variable">$buildDeps</span> <span class="token operator">\</span>
+    &amp;&amp; wget -O redis.tar.gz <span class="token string">&quot;http://download.redis.io/releases/redis-3.2.5.tar.gz&quot;</span> <span class="token operator">\</span>
+    &amp;&amp; mkdir -p /usr/src/redis <span class="token operator">\</span>
+    &amp;&amp; tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1 <span class="token operator">\</span>
+    &amp;&amp; make -C /usr/src/redis <span class="token operator">\</span>
+    &amp;&amp; make -C /usr/src/redis install <span class="token operator">\</span>
+    &amp;&amp; rm -rf /var/lib/apt/lists/* <span class="token operator">\</span>
+    &amp;&amp; rm redis.tar.gz <span class="token operator">\</span>
+    &amp;&amp; rm -r /usr/src/redis <span class="token operator">\</span>
+    &amp;&amp; apt-get purge -y --auto-remove <span class="token variable">$buildDeps</span></span>
+</code></pre></div><p><strong>这里没有使用很多个 RUN 对一一对应不同的命令，而是仅仅使用一个 RUN 指令，并使用 &amp;&amp; 将各个所需命令串联起来。将之前的 7 层，简化为了 1 层。这并不是在写 Shell 脚本，而是在定义每一层该如何构建.并且，这里为了格式化还进行了换行。Dockerfile 支持 Shell 类的行尾添加 <code>\</code> 的命令换行方式，以及行首 <code>#</code> 进行注释的格式。良好的格式，比如换行、缩进、注释等，会让维护、排障更为容易，这是一个比较好的习惯。</strong></p> <p><strong>此外，还可以看到这一组命令的最后添加了清理工作的命令，删除了为了编译构建所需要的软件，清理了所有下载、展开的文件，并且还清理了 <code>apt</code> 缓存文件。这是很重要的一步，我们之前说过，镜像是多层存储，每一层的东西并不会在下一层被删除，会一直跟随着镜像。因此镜像构建时，一定要确保每一层只添加真正需要添加的东西，任何无关的东西都应该清理掉</strong></p> <p>​</p> <p><strong>关于层的图片请看：</strong></p> <p>一个docker镜像由多个可读的镜像层组成，然后运行的容器会在这个docker的镜像上面多加一层可写的容器层，任何的对文件的更改都只存在此容器层。因此任何对容器的操作均不会影响到镜像</p> <p><img alt="img" data-src="https://images2018.cnblogs.com/blog/799055/201803/799055-20180309154723871-127136242.png" loading="lazy" class="lazy"></p> <p>dockerfile 支持shell类后面添加\命令方式换行，以及首行#号进行注释格式，很多人 制作出了很臃肿的镜像的原因之一，就是忘记了每一层构建的最后一定要清理掉无关文件. <strong>那就是使用&amp;&amp;进行链接</strong>：</p> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">FROM</span> centos</span>
+<span class="token instruction"><span class="token keyword">RUN</span> yum install wget</span>
+<span class="token instruction"><span class="token keyword">RUN</span> wget -O redis.tar.gz <span class="token string">&quot;http://download.redis.io/releases/redis-5.0.3.tar.gz&quot;</span></span>
+<span class="token instruction"><span class="token keyword">RUN</span> tar -xvf redis.tar.gz</span>
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>以上执行会创建 3 层镜像。可简化为以下格式：
+FROM centos
+RUN yum install wget \
+    &amp;&amp; wget -O redis.tar.gz &quot;http://download.redis.io/releases/redis-5.0.3.tar.gz&quot; \
+    &amp;&amp; tar -xvf redis.tar.gz
+</code></pre></div><p><code>docker bulid -t centos:1.0</code> 进行构建</p> <p><strong>比如构建一个nginx</strong> :</p> <p>在一个空白目录中，建立一个文本文件，并命名为 <code>Dockerfile</code>： <code>vim Dockerfile</code></p> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">From</span> nginx</span>
+<span class="token instruction"><span class="token keyword">Run</span> echo <span class="token string">'&lt;/h1&gt;Hello, Docker!&lt;/h1&gt;'</span> /usr/share/nginx/html/index.html</span>
+</code></pre></div><p>使用以下命令进行构建：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>docker build <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> <span class="token operator">&lt;</span>上下文路径/URL/-<span class="token operator">&gt;</span>
+</code></pre></div><p>在这里我们指定了最终镜像的名称 <code>-t nginx:v3</code>，构建成功后，运行这个镜像</p> <p><strong>Dokerfile比较庞大具体的其他的构建可以去看 <a href="https://github.com/docker-library" target="_blank" rel="noopener noreferrer">docker file list<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></strong></p> <p>更多关于docker层的概念请看：</p> <p><a href="https://blog.csdn.net/runner668/article/details/80955381?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4.control" target="_blank" rel="noopener noreferrer">Docker分层原理与内部结构<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://blog.csdn.net/liumiaocn/article/details/100922774" target="_blank" rel="noopener noreferrer">Dockerfile实践指南之层数与大小的控制<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="http://dockone.io/article/8179" target="_blank" rel="noopener noreferrer">Docker多阶段构建最佳实践<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://blog.csdn.net/weixin_46119868/article/details/106337273" target="_blank" rel="noopener noreferrer">docker镜像的优化<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="使用上下文环境构建"><a href="#使用上下文环境构建" class="header-anchor">#</a> 使用上下文环境构建：</h3> <p>会看到 <code>docker build</code> 命令最后有一个 <code>.</code>。<code>.</code> 表示当前目录，而 <code>Dockerfile</code> 就在当前目录，<code>这个路径不能认为是在指定 Dockerfile 所在的路径</code>，这么理解其实是不准确的。如果对应上面的命令格式，你可能会发现，这是在指定<strong>上下文路径</strong>。</p> <p>一般来说，应该会将 <code>Dockerfile</code> 置于一个空目录下，或者项目根目录下。如果该目录下没有所需文件，那么应该把所需文件复制一份过来。如果目录下有些东西确实不希望构建时传给 Docker 引擎，那么可以用 <code>.gitignore</code> 一样的语法写一个 <code>.dockerignore</code>，该文件是用于剔除不需要作为上下文传递给 Docker 引擎的。</p> <p>那么为什么会有人误以为 <code>.</code> 是指定 <code>Dockerfile</code> 所在目录呢？这是因为在默认情况下，如果不额外指定 <code>Dockerfile</code> 的话，会将上下文目录下的名为 <code>Dockerfile</code> 的文件作为 Dockerfile。</p> <p>这只是默认行为，实际上 <code>Dockerfile</code> 的文件名并不要求必须为 <code>Dockerfile</code>，而且并不要求必须位于上下文目录中，比如可以用 <code>-f ../Dockerfile.php</code> 参数指定某个文件作为 <code>Dockerfile</code>。</p> <p>当然，一般大家习惯性的会使用默认的文件名 <code>Dockerfile</code>，以及会将其置于镜像构建上下文目录中。</p> <p>创建一个html文件：</p> <p>​	创建一个Dockerfile 里面书写：<code>from tomcat	copy /usr/local/tomcat/webapps/root</code>
+​	然后执行一个为：<code>docker build -t myshop</code> .
+​	里会自动的寻找到 Dockerfile可以看到打印的执行的语句然后进入 tomcat中会发现已经创建了个index.html</p> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code>在Dockerfile 中的使用	构建时先声明
+    <span class="token instruction"><span class="token keyword">from</span> tomcat</span>
+    <span class="token instruction"><span class="token keyword">workdir</span> /usr/local/tomcat/webapps/root/</span>
+    <span class="token instruction"><span class="token keyword">run</span> rm -fr *</span>
+    <span class="token instruction"><span class="token keyword">copy</span> spring-boot-institute.jar .</span>
+    <span class="token instruction"><span class="token keyword">Run</span>  unzip spring-boot-institute.jar</span>
+    <span class="token instruction"><span class="token keyword">run</span> rm -fr spring-boot-institute.jar</span>
+    <span class="token instruction"><span class="token keyword">workdir</span> /usr/local/tomcat</span>
+</code></pre></div><p>运行这个docker容器：<code>docker build -t institute</code>	 这里会自动的寻找到Dockerfile</p> <p><strong>比如一个项目中这样使用：</strong></p> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">FROM</span> php:apache</span>
+<span class="token comment">#Install git</span>
+<span class="token instruction"><span class="token keyword">RUN</span> apt-get update </span>
+	&amp;&amp; apt-get install -y git
+    &amp;&amp; docker-php-ext-install pdo pdo_mysql mysqli
+    &amp;&amp; a2enmod rewrite
+<span class="token comment">#Install Composer</span>
+<span class="token instruction"><span class="token keyword">RUN</span> php -r <span class="token string">&quot;copy('https://getcomposer.org/installer', 'composer-setup.php');&quot;</span></span>
+&amp;&amp; php composer-setup.php --install-dir=. --filename=composer
+&amp;&amp; mv composer /usr/local/bin/
+<span class="token instruction"><span class="token keyword">COPY</span> ./html/ /var/www/html/</span>
+<span class="token instruction"><span class="token keyword">EXPOSE</span> 80</span>
+</code></pre></div><p><strong>执行命令启动</strong> ： <code>docker build -f dockerfile -t myapp:0.1</code></p> <p><strong>比如一个maven项目 ：</strong></p> <p>创建一个DockerFile   <code>vim dockerfile</code></p> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token comment"># First stage: complete build environment</span>
+<span class="token instruction"><span class="token keyword">FROM</span> maven:3.5.0-jdk-8-alpine <span class="token keyword">AS</span> builder</span>
+
+<span class="token comment"># add pom.xml and source code</span>
+<span class="token instruction"><span class="token keyword">ADD</span> ./pom.xml pom.xml</span>
+<span class="token instruction"><span class="token keyword">ADD</span> ./src src/</span>
+
+<span class="token comment"># package jar</span>
+<span class="token instruction"><span class="token keyword">RUN</span> mvn clean package</span>
+
+<span class="token comment"># Second stage: minimal runtime environment</span>
+<span class="token instruction"><span class="token keyword">From</span> openjdk:8-jre-alpine</span>
+
+<span class="token comment"># copy jar from the first stage</span>
+<span class="token instruction"><span class="token keyword">COPY</span> <span class="token options"><span class="token property">--from</span><span class="token punctuation">=</span><span class="token string">builder</span></span> target/my-app-1.0-SNAPSHOT.jar my-app-1.0-SNAPSHOT.jar</span>
+
+<span class="token instruction"><span class="token keyword">EXPOSE</span> 8080</span>
+
+<span class="token instruction"><span class="token keyword">CMD</span> [<span class="token string">&quot;java&quot;</span>, <span class="token string">&quot;-jar&quot;</span>, <span class="token string">&quot;my-app-1.0-SNAPSHOT.jar&quot;</span>]</span>
+</code></pre></div><p><strong>执行命令启动</strong> ： <code>docker build -f dockerfile -t myapp:0.1</code></p> <h2 id="docker数据卷"><a href="#docker数据卷" class="header-anchor">#</a> Docker数据卷：</h2> <p>数据卷 是一个可供一个或多个容器使用的特殊目录，它绕过 UFS，可以提供很多有用的特性：</p> <p>数据卷 可以在容器之间共享和重用</p> <p>对 数据卷 的修改会立马生效</p> <p>对 数据卷 的更新，不会影响镜像</p> <p>数据卷 默认会一直存在，即使容器被删除</p> <p>注意：数据卷 的使用，类似于 Linux 下对目录或文件进行 mount，镜像中的被指定为挂载点的目录中的文件会隐藏掉，能显示看的是挂载的 数据卷。</p> <ul><li><code>创建一个数据卷：docker volume create my-vol</code></li> <li>``查看所有数据卷：docker volume ls`</li> <li><code>在</code>主机里查看指定的数据卷：docker volume inspect my-vol启动一个挂载的数据容器：<code>在用 docker run 命令的时候，使用 --mount 标记来将 数据卷 挂载到容器里。在一次 docker run 中可以挂载多个 数据卷。</code></li> <li><code>下面创建一个名为 web 的容器，并加载一个 数据卷 到容器的 /webapp 目录。：</code></li></ul> <div class="language- extra-class"><pre class="language-text"><code>$ docker run -d -P \
+  --name web \
+	# -v my-vol:/wepapp \
+	--mount source=my-vol,target=/webapp \
+	training/webapp \
+	python app.py
+</code></pre></div><h3 id="查看数据卷的信息"><a href="#查看数据卷的信息" class="header-anchor">#</a> 查看数据卷的信息：</h3> <p>​		在主机里使用以下命令可以查看 web 容器的信息
+​		docker inspect web</p> <h3 id="删除数据卷"><a href="#删除数据卷" class="header-anchor">#</a> 删除数据卷：</h3> <p>​		<code>命令：docker volume rm my-vol</code></p> <p>​		数据卷 是被设计用来持久化数据的，它的生命周期独立于容器，Docker 不会在容器被删除后自动删除 数据卷，并且也不存在垃圾回收这样的机制来处理没有任何容器引用的 数据卷。如果需要在删除容器的同时移除数据卷。可以在删除容器的时候使用 docker rm -v 这个命令。</p> <h3 id="无主的数据卷的删除用以下命令清理"><a href="#无主的数据卷的删除用以下命令清理" class="header-anchor">#</a> 无主的数据卷的删除用以下命令清理：</h3> <p><code>docker volume pruse</code></p> <h3 id="实例共享数据卷"><a href="#实例共享数据卷" class="header-anchor">#</a> 实例共享数据卷：</h3> <ol><li><p><code>在/usr/loca/docker/tomcat下创建一个ROOT目录，并在里面书写一个index.html</code></p></li> <li><p><code>然后启动docker容器的tomcat：</code></p> <p><code>docker run -p 8080:8080 --name tomcat -d -v /usr/local/docker/tomcat/ROOT:/usr/local/tomcat/webapps/ROOT tomcat</code></p></li> <li><p><code>通过交互式进入容器中的tomcat：docker exec -it tomcat bash</code> <code>可以在webapps中的ROOT目录看到index.html，</code></p></li> <li><p><code>然后在启动一个tomcat:docker run -p 8081:8080 --name tomcat1 -d -v /usr/local/docker/tomcat/ROOT:/usr/local/tomcat/webapps/ROOT tomcat</code> <code>这时访问就可以看到两个同时访问了一个数据卷了，这时就可以共享到数据卷了</code></p></li></ol> <h2 id="docker镜像"><a href="#docker镜像" class="header-anchor">#</a> Docker镜像：</h2> <h3 id="docker下载镜像"><a href="#docker下载镜像" class="header-anchor">#</a> docker下载镜像：</h3> <p><code>1.docker pull ubuntu:16.04</code> <code>//docker image ls :查看镜像列表列出的是顶级的镜像</code> <code>// docker ps :查看容器列表</code></p> <p><code>2.运行这个ubuntu容器：</code> <code>docker run -it --rm \</code> <code>ubuntu:16.04 \</code> <code>bash</code> <code>其实上面的一串命令等于：docker run -it --rm ubuntu:16.04 bash</code> <code>3.说明：</code>
+it：这是两个参数，一个是 -i：交互式操作，一个是 -t 终端。我们这里打算进入 bash 执行一些命令并查看返回结果，因此我们需要交互式终端。</p> <p>​			--rm：这个参数是说容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动 docker rm。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用 --rm 可以避免浪费空间。ubuntu:16.04：这是指用 ubuntu:16.04 镜像为基础来启动容器。bash：放在镜像名后的是命令，这里我们希望有个交互式 Shell，因此用的是 bash运行一个容器等于运行一个对象，</p> <h3 id="docker镜像操作"><a href="#docker镜像操作" class="header-anchor">#</a> Docker镜像操作</h3> <p><strong>列出镜像</strong>：<code>docker image ls</code></p> <p><strong>拉取镜像</strong>：<code>docker pull [ubuntu:13.10]</code></p> <p><strong>查找镜像</strong>：<code>docker search [httpd]</code></p> <p><strong>镜像是不能够单独启动的他是依靠容器的</strong>  根据镜像运行一个容器： <code>docker run --name container-name -d image-name</code></p> <p>eg : <code>docker run –name myredis –d redis</code>
+​</p> <blockquote><p>​		 --name：自定义容器名</p> <p>​		 -d：后台运行 image-name:指定镜像模板 列表 docker ps（查看运行中的容器）；</p> <p>​		加上-a；可以查看所有容器
+​		//docker image ls :查看镜像列表列出的是顶级的镜像
+​		//docker ps :查看容器列表</p></blockquote> <p><strong>删除镜像</strong>： <code>docker image rm [选项] &lt;镜像1&gt; [镜像2，...]</code>    其中，<code>&lt;镜像&gt;</code> 可以是 <code>镜像短 ID</code>、<code>镜像长 ID</code>、<code>镜像名</code> 或者 <code>镜像摘要</code>。或者： <code>docker rmi [镜像name]</code></p> <p><strong>构建镜像</strong>：<code>docker build -t runoob/centos:6.7 .</code></p> <p>参数说明：</p> <ul><li><strong>-t</strong> ：指定要创建的目标镜像名</li> <li><strong>.</strong> ：Dockerfile 文件所在目录，可以指定Dockerfile 的绝对路径</li></ul> <p>❤<em>注</em>：[]内均为参数，也就是必选的</p> <h3 id="虚悬镜像"><a href="#虚悬镜像" class="header-anchor">#</a> 虚悬镜像：</h3> <p>镜像列表中，还可以看到一个特殊的镜像，这个镜像既没有仓库名，也没有标签，均为 <code>&lt;none&gt;</code>。</p> <p>原因：</p> <p>​	这个镜像原本是有镜像名和标签的，原来为 mongo:3.2，随着官方镜像维护，发布了新版本后，重新 docker pull mongo:3.2 时，mongo:3.2 这个镜像名被转移到了新下载的镜像身上，而旧的镜像上的这个名称则被取消，从而成为了  <code>&lt;none&gt;</code>。除了 docker pull 可能导致这种情况，docker build 也同样可以导致这种现象。</p> <p>​	由于新旧镜像同名，旧镜像名称被取消，从而出现仓库名、标签均为 <code>&lt;none&gt;</code> 的镜像。</p> <h4 id="删除虚悬镜像"><a href="#删除虚悬镜像" class="header-anchor">#</a> 删除虚悬镜像：</h4> <p><code>$ docker image prune</code></p> <h4 id="查看中间层镜像"><a href="#查看中间层镜像" class="header-anchor">#</a> 查看中间层镜像：</h4> <p><code>docker image ls -a</code></p> <p>​     这些无标签的镜像很多都是中间层镜像，是其它镜像所依赖的镜像。这些无标签镜像不应该删除，否则会导致上层镜像因为依赖丢失而出错。</p> <p>​	实际上，这些镜像也没必要删除，因为之前说过，相同的层只会存一遍，而这些镜像是别的镜像的依赖，因此并不会因为它们被列出来而多存了一份，无论如何你也会需要它们</p> <p>​	docker image ls 还支持强大的过滤器参数 --filter，或者简写 -f。之前我们已经看到了使用过滤器来列出虚悬镜像的用法，它还有更多的用法。比如，我们希望看到在 mongo:3.2 之后建立的镜像</p> <div class="language- extra-class"><pre class="language-text"><code>$ docker image ls -f since=mongo:3.2  
+想看某个位置之前的镜像 ：只需要把 since 换成 before
+</code></pre></div><h4 id="删除指定的镜像"><a href="#删除指定的镜像" class="header-anchor">#</a> 删除指定的镜像：</h4> <p>​	<code>docker image rm [选项] &lt;镜像1&gt; [&lt;镜像2&gt; ...]</code> 其中，<code>&lt;镜像&gt;</code> 可以是 镜像短 ID、镜像长 ID、镜像名 或者 镜像摘要。</p> <div class="language-yml extra-class"><pre class="language-yml"><code>停止 docker stop container<span class="token punctuation">-</span>name/container<span class="token punctuation">-</span>id 停止当前你运行的容器 
+启动 docker start container<span class="token punctuation">-</span>name/container<span class="token punctuation">-</span>id 启动容器
+删除 docker rm container<span class="token punctuation">-</span>id 删除指定容器 
+端口映射 <span class="token punctuation">-</span>p 6379<span class="token punctuation">:</span>6379 eg<span class="token punctuation">:</span>docker run <span class="token punctuation">-</span>d <span class="token punctuation">-</span>p 6379<span class="token punctuation">:</span>6379 <span class="token punctuation">-</span><span class="token punctuation">-</span>name myredis docker.io/redis <span class="token punctuation">-</span>p<span class="token punctuation">:</span>主机端口(映射到)容器内部的端口
+容器日志 docker logs container<span class="token punctuation">-</span>name/container<span class="token punctuation">-</span>id	
+</code></pre></div><h2 id="docker-容器"><a href="#docker-容器" class="header-anchor">#</a> Docker 容器</h2> <h3 id="docker-容器命令操作"><a href="#docker-容器命令操作" class="header-anchor">#</a> Docker 容器命令操作</h3> <p>新建容器：-t选项让Docker分配一个伪终端并绑定到容器的标准输入上，-i则让容器的标准输入保持打开</p> <p><code>docker create -it ubuntu:latest</code></p> <p>启动容器：<code>docker start [container ID or NAMES]</code> <strong>docker start 26c7868e652f</strong></p> <p>新建并启动容器  <code>docker run [container ID or NAMES]</code></p> <p>守护态运行 ： <code>docker run -d ubuntu:17.10 /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</code></p> <p>停止容器运行 ： <code>docker container stop [id]</code> 等价于---&gt; <code>docker stop [id]</code>  例如：<strong>docker container stop 635c90c02f22</strong></p> <p>查看容器列表 ： <code>docker container ls</code></p> <p>查看容器 ： <code>docker container ls -a</code></p> <p><em>查看当前运行的容器 （旧）：<code>docker ps</code></em></p> <p><em>查看全部容器（旧）： <code>docker ps -a</code></em></p> <p>进入容器： <code>docker exec -t [ubuntu]</code></p> <p>删除容器 ： <code>docker container rm [container-name]</code>  或者 ：<code>docker rm -f [continer Id 或者name]</code></p> <p>docker rm [-f|--force] [-l|--link] [-v|--volumes] CONTAINER [CONTAINER...]</p> <p>主要支持的选项包括</p> <p>1） -f, --force=false：是否强行终止并删除一个运行中的容器</p> <p>2） -l, --link=false：删除容器的连接，但保留容器</p> <p>3） -v, --volumes=false：删除容器挂载的数据卷。</p> <p>清理所有处于终止的容器 ： <code>docker container prune</code></p> <p>设置容器开机启动： 前提是docker已经设置为开机自启动了。</p> <div class="language- extra-class"><pre class="language-text"><code>重启策略：
+	no -  容器退出时，不重启容器；
+	on-failure - 只有在非0状态退出时才从新启动容器；
+	always - 无论退出状态是如何，都重启容器；
+
+	还可以在使用on - failure策略时，指定Docker将尝试重新启动容器的最大次数。默认情况下，Docker将尝试永远重新启动容器。
+	
+	在启动容器的时候设置
+	docker run --restart=on-failure:3 redis
+	如果容器已经启动后
+	docker update --restart=on-failure:3 redis
+</code></pre></div><p>查看日志 ： <code>docker container logs [container ID or NAMES]</code> <strong>例：docker container logs 635c90c02f22</strong></p> <p>❤<em>注</em>：[]内均为参数，也就是必选的，</p> <h2 id="docker构建tomact"><a href="#docker构建tomact" class="header-anchor">#</a> Docker构建tomact:</h2> <p>​	进入docker目录：<code>docker pull tomcat</code></p> <p>​	启动：</p> <div class="language- extra-class"><pre class="language-text"><code>docker run --name tomcat -p 8080:8080 -v $PWD/test:/usr/local/tomcat/webapps/test -d tomcat
+说明：
+-p 8080:8080：将容器的8080端口映射到主机的8080端口
+-v $PWD/test:/usr/local/tomcat/webapps/test：将主机中当前目录下的test挂载到容器的/test 
+</code></pre></div><p>​	查看容器启动情况：docker ps</p> <p><strong>备注：</strong></p> <ul><li>1.命令：<code>docker pull tomcat</code>
+下载tomcat 9： <code>docker pull tomcat:9-jre8</code></li> <li>2.docker中运行tomcat：需要制定端口
+<code>docker run -p 8080:8080 tomcat</code></li></ul> <h2 id="docker构建mysql"><a href="#docker构建mysql" class="header-anchor">#</a> Docker构建mysql:</h2> <p>​	进入docker目录：<code>docker pull mysql:5.7.22</code>
+​	启动运行：</p> <blockquote><p>docker run -p 3306:3306 --name mysql <br>
+​				-v /usr/local/docker/mysql/conf:/etc/mysql <br>
+​				-v /usr/local/docker/mysql/logs:/var/log/mysql <br>
+​				-v /usr/local/docker/mysql/data:/var/lib/mysql <br>
+​				-e MYSQL_ROOT_PASSWORD=lkl555 <br>
+​				-d mysql:5.7.22
+​	说明：-p 3306:3306：将容器的3306端口映射到主机的3306端口
+​			-v /usr/local/docker/mysql/conf:/etc/mysql：将主机当前目录下的 conf 挂载到容器的 /etc/mysql
+​			-v /usr/local/docker/mysql/logs:/var/log/mysql：将主机当前目录下的 logs 目录挂载到容器的 /var/log/mysql
+​			-v /usr/local/docker/mysql/data:/var/lib/mysql：将主机当前目录下的 data 目录挂载到容器的 /var/lib/mysql
+​			-e MYSQL_ROOT_PASSWORD=123456：初始化root用户的密码
+​	查看：docker ps -a 查看刚刚启动的服务</p></blockquote> <h3 id="出现的错误"><a href="#出现的错误" class="header-anchor">#</a> 出现的错误：</h3> <p>​	Error response from daemon: driver failed programming external connectivity on endpoint mysql (c28bcf099d63d5f3b2affd38a033a42d60e3cf7054fc1bd520342b73f6a2987b): Error starting userland proxy: listen tcp 0.0.0.0:3306: bind: address already in use</p> <p>​		原因是本地的mysql已经启动了端口不能够进行映射了、</p> <p>​		所以停掉本地的mysql服务：sudo service mysql stop</p> <p>​		或者使用：docker ps -a</p> <p>​		然后使用 docker rm xxxxxxxxx</p> <p>​		然后再从新启动</p> <p>​	需要进入：docker容器内</p> <blockquote><p>​		docker run -it --rm mysql:5.7.22 bash
+​		ls  -al
+​		查看安装到容器的哪个位置：whereis mysql
+​		进入、etc/mysql/mysql.conf.d</p> <p>​		查看 mysqld.cnf是否有 max_allowd_packet=128M</p> <p>​		没有的话则进行追加：echo &quot;max_allowd_packet=128M&quot; &gt;&gt; mysqld.cnf</p> <p>​		这样是为了设置mysql可以执行文件的大小。</p> <p>​		修改之后退出，进入ubuntu界面，然后重启mysql容器 docker restart mysql
+​	将容器里面的配置文件移到宿主机 mysql/conf 目录下: docker cp  mysql:/etc/mysql .
+​	将这些文件移动到conf目录下</p></blockquote> <p>​	注意：这里出现了错误并不能够去copy过去。。。。</p> <h2 id="docker构建oracle"><a href="#docker构建oracle" class="header-anchor">#</a> Docker构建oracle</h2> <ul><li><p>1.拉去oracle数据库镜像
+<code>docker pull registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g</code></p></li> <li><p>2.启动oracle  自动启动镜像 --restart=always
+<code>docker run -p 1521:1521 --name oracle_11g -d --restart=always registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g</code></p></li> <li><p>3.启动服务：<code>docker start oracle_11g</code></p></li> <li><p>4.进入控制台设置用户信息 ：<code>docker exec -it oracle_11g bash</code></p></li> <li><p>5.切换到root用户模式下
+su root
+输入密码helowin</p></li> <li><p>6.编辑profile文件配置ORACLE环境变量</p> <blockquote><p>export ORACLE_HOME=/home/oracle/app/oracle/product/11.2.0/dbhome_2
+export ORACLE_SID=helowin
+export PATH=$ORACLE_HOME/bin:$PATH</p></blockquote></li> <li><p>7.重启配置文件服务
+source /etc/profile</p></li> <li><p>8.建立sqlplus软连接
+ln -s $ORACLE_HOME/bin/sqlplus /usr/bin</p></li> <li><p>9.切换到oracle用户，修改oracle的相关账号密码</p></li></ul> <blockquote><p>su oracle
+//登录sqlplus并修改sys、system用户密码
+sqlplus /nolog</p> <p>conn /as sysdba</p> <p>alter user system identified by oracle;  # 将system的密码改为oracle</p> <p>alter user sys identified by oracle; # 将sys的密码改为oracle</p> <p>ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED; # 更改配置文件默认限制密码</p></blockquote> <ul><li><p>10.使用navicat进行连接：</p> <img src="https://s1.ax1x.com/2020/10/08/0wqRa9.png" alt="0wq9E9.png" style="zoom:80%;"> <img src="https://s1.ax1x.com/2020/10/08/0wq9E9.png" alt="0wq9E9.png" style="zoom:80%;"></li></ul> <h4 id="oracle中的sys用户和system用户的区别"><a href="#oracle中的sys用户和system用户的区别" class="header-anchor">#</a> oracle中的sys用户和system用户的区别：</h4> <ul><li><code>【sys】所有 oracle 的数据字典的基表和视图都存放在 sys 用户中，这些基表和视图对于 oracle 的运行是至关重要的，由数据库自己维护，任何用户都不能手动更改。 sys 用户拥有 dba ， sysdba ， sysoper 等角色或权限，是 oracle 权限最高的用户。</code></li> <li><code>【 system】 用户用于存放次一级的内部数据，如 oracle 的一些特性或工具的管理信息。 system 用户拥有普通 dba 角色权限。</code></li> <li><code>【system】用户只能用 normal 身份登陆 em ，除非你对它授予了 sysdba 的系统权限(grant sysdba to system)或者 sysoper 系统权限。</code></li> <li><code>【 sys 】用户具有 “SYSDBA” 或者 “SYSOPER” 系统权限，登陆 em 也只能用这两个身份，不能用 normal 。</code></li></ul> <h2 id="docker-compose"><a href="#docker-compose" class="header-anchor">#</a> Docker Compose:</h2> <ul><li>Docker Compose：是docker官方编排的快速，对于容器集群很有利</li> <li>Compose定位是：定义和运行多个Docker容器的应用，主要是为了解决多个容器间的相互配合来完成某项任务。他允许用户通过docker-compose.yml的定义一组相关连的应用容器为一个项目</li> <li>服务：一个应用容器，实际上可以包括若干个运行相同镜像的容器实例</li> <li>项目：由一组关联的应用容器组成的一个完整业务单元，在docker-compose.yml中定义compose默认管理的是对象是项目，通过子命令对项目快捷的生命周期的管理</li></ul> <h3 id="安装docker-compose"><a href="#安装docker-compose" class="header-anchor">#</a> 安装docker compose:</h3> <p><code>如果你已经安装了docker那么就先把docker给删除了，</code></p> <p><code>先进行卸载：apt-get autoremove docker-cedocker</code></p> <p><code>然后删除dokcerlist文件：在/etc/apt/sources.list.d</code></p> <h4 id="安装docker"><a href="#安装docker" class="header-anchor">#</a> 安装docker：</h4> <p>安装docker :  <code>sudo curl -fsSL get.docker.com -o get-docker.sh</code></p> <p>因为有的aliyun上面没有具体的升级版本，所以把镜像给改写：<code>sh get-docker.sh --mirror AzureChinaCloudcd</code></p> <p>这时只需等待即可。。。。。。</p> <p>检查镜像加速文件是否存在：在/etc/docker/daemon.json中
+​	/etc/docker/daemon.json 在这里加入<code>{ &quot;registry-mirrors&quot;:[&quot;https://registry.docker-cn.com&quot;]}</code></p> <p>检查dockerversion:</p> <p>然后安装docker-compose看下面的就可以了</p> <p>安装docker 和docker compose要同时安装，</p> <p>linux安装docker compose：采用二进制包进行安装：</p> <div class="language- extra-class"><pre class="language-text"><code>$ sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose
+加入可执行的权限：
+$ sudo chmod +x /usr/local/bin/docker-compose
+</code></pre></div><h3 id="卸载docker-compose"><a href="#卸载docker-compose" class="header-anchor">#</a> 卸载docker compose:</h3> <p>​	<code>$ sudo rm /usr/local/bin/docker-compose</code></p> <h3 id="docker-compose-使用"><a href="#docker-compose-使用" class="header-anchor">#</a> Docker Compose 使用：</h3> <h4 id="模板文件"><a href="#模板文件" class="header-anchor">#</a> 模板文件：</h4> <p>在docker 文件夹中的tomcat中的创建 docker-compose.yml</p> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">&quot;3&quot;</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">webapp</span><span class="token punctuation">:</span>
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> examples/web
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;80:80&quot;</span>
+      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;/data&quot;</span>
+
+</code></pre></div><p>注意每个服务都必须通过 image 指令指定镜像或 build 指令（需要 Dockerfile）等来自动构建生成镜像。</p> <p>运行 compose 项目： docker-compose up</p> <h3 id="docker-compose命令"><a href="#docker-compose命令" class="header-anchor">#</a> Docker compose命令：</h3> <div class="language- extra-class"><pre><code>基本的命令的格式的：docker-compose [-f=&lt;arg&gt;...] [options] [COMMAND] [ARGS...]
+	命令选项：		
+		-f, --file FILE 指定使用的 Compose 模板文件，默认为 docker-compose.yml，可以多次指定。
+		-p, --project-name NAME 指定项目名称，默认将使用所在目录名称作为项目名。
+            --x-networking 使用 Docker 的可拔插网络后端特性
+            --x-network-driver DRIVER 指定网络后端的驱动，默认为 bridge
+            --verbose 输出更多调试信息。
+            -v, --version 打印版本并退出。
+		build的命令：
+			docker-compose build [options] [SERVICE...]
+			option：
+				--force-rm 删除构建过程中的临时容器。
+				--no-cache 构建镜像过程中不使用 cache（这将加长构建过程）。
+				--pull 始终尝试通过 pull 来获取更新版本的镜像。
+			config:
+				验证文件格式是否正确，若正确则显示配置，若错误则进行错误原因
+			down：此命令将会停止 up 命令所启动的容器，并移除网络
+			exec：进入指定的容器。
+			help：获得一个命令的帮助。
+			images：列出 Compose 文件中包含的镜像。
+			kill：格式为 docker-compose kill [options] [SERVICE...]。通过发送 SIGKILL 信号来强制停止服务容器。
+			rm:格式为 docker-compose rm [options] [SERVICE...]。
+			删除所有（停止状态的）服务容器。推荐先执行 docker-compose stop 命令来停止容器。
+			-f：强制直接删除
+			-v:删除容器所挂载的数据卷
+			run:docker-compose run [options] [-p PORT...] [-e KEY=VAL...] SERVICE [COMMAND] [ARGS...]。
+			参数：
+				-d 后台运行容器。
+				--name NAME 为容器指定一个名字。
+				--entrypoint CMD 覆盖默认的容器启动指令。
+				-e KEY=VAL 设置环境变量值，可多次使用选项来设置多个环境变量。
+				-u, --user=&quot;&quot; 指定运行容器的用户名或者 uid。
+				--no-deps 不自动启动关联的服务容器。
+				--rm 运行命令后自动删除容器，d 模式下将忽略。
+				-p, --publish=[] 映射容器端口到本地主机。
+				--service-ports 配置服务端口并映射到本地主机。
+				-T 不分配伪 tty，意味着依赖 tty 的指令将无法运行。
+				start,stop,top,pause,port 和docker中的使用的都一样
+</code></pre></div><p><code>前台运行：docker-compose up</code></p> <p><code>后台运行：docker-compose up -d</code></p> <p><code>启动：docker-compose start</code></p> <p><code>停止：docker-compose stop</code></p> <p><code>停止并移除容器：docker-compose down</code></p> <p><strong>开机自启：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>vim /etc/rc.d/rc.local 加入下面的代码
+
+/usr/local/bin/docker-compose -f /www/docker/trace_fecshop/docker-compose.yml up -d
+</code></pre></div><h3 id="docker-compose实战nginx"><a href="#docker-compose实战nginx" class="header-anchor">#</a> Docker compose实战Nginx</h3> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+  <span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">nginx</span><span class="token punctuation">:</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token datetime number">81:80</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./conf/nginx.conf<span class="token punctuation">:</span>/etc/nginx/nginx.conf
+      <span class="token punctuation">-</span> ./wwwroot<span class="token punctuation">:</span>/usr/share/nginx/wwwroot
+</code></pre></div><p>配置nginx的数据卷：</p> <p>在dokcer文件下创建：nginx的目录下创建：nginx.conf文件：</p> <p>在当前目录创建wwwroot目录</p> <p>这里直接书写为
+/usr/local/dokcer/nginx/conf/nginx.conf
+/usr/local/dokcer/nginx/wwwroot</p> <p>在nginx.conf目录配置nginx的虚拟主机：然后去配置nginx即可</p> <h3 id="docker-compose实战tomcat"><a href="#docker-compose实战tomcat" class="header-anchor">#</a> Docker compose实战tomcat:</h3> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">tomcat</span><span class="token punctuation">:</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> tomcat
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> tomcat
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 8080<span class="token punctuation">:</span><span class="token number">8080</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> /usr/local/docker/tomcat/webapps/test<span class="token punctuation">:</span>/usr/local/tomcat/webapps/test
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">TZ</span><span class="token punctuation">:</span> Asia/Shanghai
+</code></pre></div><h3 id="docker-compose-实战mysql5"><a href="#docker-compose-实战mysql5" class="header-anchor">#</a> Docker compose 实战mysql5：</h3> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">mysql</span><span class="token punctuation">:</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> mysql<span class="token punctuation">:</span>5.7.22
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> mysql
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token punctuation">-</span> 3306<span class="token punctuation">:</span><span class="token number">3306</span>
+        <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+          <span class="token key atrule">TZ</span><span class="token punctuation">:</span> Asia/Shanghai
+          <span class="token key atrule">MYSQL_ROOT_PASSWORD</span><span class="token punctuation">:</span> <span class="token number">123456</span>
+        <span class="token key atrule">command</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span><span class="token punctuation">-</span>character<span class="token punctuation">-</span>set<span class="token punctuation">-</span>server=utf8mb4
+          <span class="token punctuation">-</span><span class="token punctuation">-</span>collation<span class="token punctuation">-</span>server=utf8mb4_general_ci
+          <span class="token punctuation">-</span><span class="token punctuation">-</span>explicit_defaults_for_timestamp=true
+          <span class="token punctuation">-</span><span class="token punctuation">-</span>lower_case_table_names=1
+          <span class="token punctuation">-</span><span class="token punctuation">-</span>max_allowed_packet=128M
+          <span class="token punctuation">-</span><span class="token punctuation">-</span>sql<span class="token punctuation">-</span>mode=&quot;STRICT_TRANS_TABLES<span class="token punctuation">,</span>NO_AUTO_CREATE_USER<span class="token punctuation">,</span>NO_ENGINE_SUBSTITUTION<span class="token punctuation">,</span>NO_ZERO_DATE<span class="token punctuation">,</span>NO_ZERO_IN_DATE<span class="token punctuation">,</span>ERROR_FOR_DIVISION_BY_ZERO&quot;
+        <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> mysql<span class="token punctuation">-</span>data<span class="token punctuation">:</span>/var/lib/mysql
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token key atrule">mysql-data</span><span class="token punctuation">:</span>
+</code></pre></div><p>就是为了简化docker的使用：</p> <p>直接运行 docker-compose.yml中的就可以使用。运行即可以</p> <p><code>docker-compose up</code></p> <h3 id="docker-compose-实战oracle"><a href="#docker-compose-实战oracle" class="header-anchor">#</a> Docker compose 实战oracle</h3> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">oracle</span><span class="token punctuation">:</span>
+    <span class="token comment"># sid: xe</span>
+    <span class="token comment"># username: system</span>
+    <span class="token comment"># password: oracle</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> sath89/oracle<span class="token punctuation">-</span>xe<span class="token punctuation">-</span>11g
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always   <span class="token comment">#如果docker容器由于一些问题挂掉的化，docker-composer会自动把容器给启动起来</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> oracle  <span class="token comment">#启动之后容器的名称</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> /my<span class="token punctuation">-</span>docker<span class="token punctuation">-</span>data/oracle<span class="token punctuation">-</span>11g/data<span class="token punctuation">:</span>/u01/app/oracle
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 1521<span class="token punctuation">:</span><span class="token number">1521</span>
+</code></pre></div><ul><li><p><code>启动服务：docker-compose -f oracle.yml up -d</code></p></li> <li><p><code>查看运行的组件：docker ps -a</code></p></li></ul> <h3 id="docker-compose-实战rabbitmq"><a href="#docker-compose-实战rabbitmq" class="header-anchor">#</a> Docker compose 实战RabbitMQ</h3> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">rabbitmq</span><span class="token punctuation">:</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> rabbitmq<span class="token punctuation">:</span>management
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> rabbitmq
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 5672<span class="token punctuation">:</span><span class="token number">5672</span>
+      <span class="token punctuation">-</span> 15672<span class="token punctuation">:</span><span class="token number">15672</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">TZ</span><span class="token punctuation">:</span> Asia/Shanghai
+      <span class="token key atrule">RABBITMQ_DEFAULT_USER</span><span class="token punctuation">:</span> rabbit
+      <span class="token key atrule">RABBITMQ_DEFAULT_PASS</span><span class="token punctuation">:</span> <span class="token number">123456</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./data<span class="token punctuation">:</span>/var/lib/rabbitmq
+</code></pre></div><p>centos用上面的会出现 <code>chown: changing ownership of '/var/lib/rabbitmq': Permission denied</code></p> <p>解决方案：https://jingyan.baidu.com/article/9c69d48f7821b853c9024ef8.html</p> <p><a href="https://imgtu.com/i/gzNflq" target="_blank" rel="noopener noreferrer"><img alt="gzNflq.png" data-src="https://z3.ax1x.com/2021/05/25/gzNflq.png" loading="lazy" class="lazy"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>经过以上配置就可以进行访问。</p> <h3 id="docker-compose-实战rocketmq"><a href="#docker-compose-实战rocketmq" class="header-anchor">#</a> Docker compose 实战RocketMq</h3> <p><strong>docker-compose.yml</strong></p> <p>注意：启动RocketMQ server + Broker+ Console至少需要2G内容。</p> <div class="language- extra-class"><pre class="language-text"><code>version: '3.5'
+services:
+  rmqnamesrv:
+    image: foxiswho/rocketmq:server
+    container_name: rmqnamesrv
+    ports:
+      - 9876:9876
+    volumes:
+      - ./data/logs:/opt/logs
+      - ./data/store:/opt/store
+    networks:
+        rmq:
+          aliases:
+            - rmqnamesrv
+
+  rmqbroker:
+    image: foxiswho/rocketmq:broker
+    container_name: rmqbroker
+    ports:
+      - 10909:10909
+      - 10911:10911
+    volumes:
+      - ./data/logs:/opt/logs
+      - ./data/store:/opt/store
+      - ./data/brokerconf/broker.conf:/etc/rocketmq/broker.conf
+    environment:
+        NAMESRV_ADDR: &quot;rmqnamesrv:9876&quot;
+        JAVA_OPTS: &quot; -Duser.home=/opt&quot;
+        JAVA_OPT_EXT: &quot;-server -Xms128m -Xmx128m -Xmn128m&quot;
+    command: mqbroker -c /etc/rocketmq/broker.conf
+    depends_on:
+      - rmqnamesrv
+    networks:
+      rmq:
+        aliases:
+          - rmqbroker
+
+  rmqconsole:
+    image: styletang/rocketmq-console-ng
+    container_name: rmqconsole
+    ports:
+      - 8080:8080
+    environment:
+        JAVA_OPTS: &quot;-Drocketmq.namesrv.addr=rmqnamesrv:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false&quot;
+    depends_on:
+      - rmqnamesrv
+    networks:
+      rmq:
+        aliases:
+          - rmqconsole
+
+networks:
+  rmq:
+    name: rmq
+    driver: bridge
+</code></pre></div><p>需要配置一下broker.conf 我们需要在./data/brokerconf/ 目录下创建一个名为broker.conf的配置文件。</p> <div class="language- extra-class"><pre class="language-text"><code># Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the &quot;License&quot;); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+
+# 所属集群名字
+brokerClusterName=DefaultCluster
+
+# broker 名字，注意此处不同的配置文件填写的不一样，如果在 broker-a.properties 使用: broker-a,
+# 在 broker-b.properties 使用: broker-b
+brokerName=broker-a
+
+# 0 表示 Master，&gt; 0 表示 Slave
+brokerId=0
+
+# nameServer地址，分号分割
+# namesrvAddr=rocketmq-nameserver1:9876;rocketmq-nameserver2:9876
+
+# 启动IP,如果 docker 报 com.alibaba.rocketmq.remoting.exception.RemotingConnectException: connect to &lt;192.168.0.120:10909&gt; failed
+# 解决方式1 加上一句 producer.setVipChannelEnabled(false);，解决方式2 brokerIP1 设置宿主机IP，不要使用docker 内部IP
+# brokerIP1=192.168.0.253
+
+# 在发送消息时，自动创建服务器不存在的topic，默认创建的队列数
+defaultTopicQueueNums=4
+
+# 是否允许 Broker 自动创建 Topic，建议线下开启，线上关闭 ！！！这里仔细看是 false，false，false
+autoCreateTopicEnable=true
+
+# 是否允许 Broker 自动创建订阅组，建议线下开启，线上关闭
+autoCreateSubscriptionGroup=true
+
+# Broker 对外服务的监听端口
+listenPort=10911
+
+# 删除文件时间点，默认凌晨4点
+deleteWhen=04
+
+# 文件保留时间，默认48小时
+fileReservedTime=120
+
+# commitLog 每个文件的大小默认1G
+mapedFileSizeCommitLog=1073741824
+
+# ConsumeQueue 每个文件默认存 30W 条，根据业务情况调整
+mapedFileSizeConsumeQueue=300000
+
+# destroyMapedFileIntervalForcibly=120000
+# redeleteHangedFileInterval=120000
+# 检测物理文件磁盘空间
+diskMaxUsedSpaceRatio=88
+# 存储路径
+# storePathRootDir=/home/ztztdata/rocketmq-all-4.1.0-incubating/store
+# commitLog 存储路径
+# storePathCommitLog=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/commitlog
+# 消费队列存储
+# storePathConsumeQueue=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/consumequeue
+# 消息索引存储路径
+# storePathIndex=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/index
+# checkpoint 文件存储路径
+# storeCheckpoint=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/checkpoint
+# abort 文件存储路径
+# abortFile=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/abort
+# 限制的消息大小
+maxMessageSize=65536
+
+# flushCommitLogLeastPages=4
+# flushConsumeQueueLeastPages=2
+# flushCommitLogThoroughInterval=10000
+# flushConsumeQueueThoroughInterval=60000
+
+# Broker 的角色
+# - ASYNC_MASTER 异步复制Master
+# - SYNC_MASTER 同步双写Master
+# - SLAVE
+brokerRole=ASYNC_MASTER
+
+# 刷盘方式
+# - ASYNC_FLUSH 异步刷盘
+# - SYNC_FLUSH 同步刷盘
+flushDiskType=ASYNC_FLUSH
+
+# 发消息线程池数量
+# sendMessageThreadPoolNums=128
+# 拉消息线程池数量
+# pullMessageThreadPoolNums=128
+</code></pre></div><h3 id="docker-compose实战redis"><a href="#docker-compose实战redis" class="header-anchor">#</a> Docker compose实战Redis:</h3> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> redis<span class="token punctuation">:</span>latest
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> redis
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 6379<span class="token punctuation">:</span><span class="token number">6379</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> mynetwork
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./redis.conf<span class="token punctuation">:</span>/usr/local/etc/redis/redis.conf<span class="token punctuation">:</span>rw
+      <span class="token punctuation">-</span> ./data<span class="token punctuation">:</span>/data<span class="token punctuation">:</span>rw
+    <span class="token key atrule">command</span><span class="token punctuation">:</span>
+      /bin/bash <span class="token punctuation">-</span>c &quot;redis<span class="token punctuation">-</span>server /usr/local/etc/redis/redis.conf &quot;
+<span class="token key atrule">networks</span><span class="token punctuation">:</span>
+  <span class="token key atrule">mynetwork</span><span class="token punctuation">:</span>
+    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre></div><h3 id="docker-compose实战redis集群"><a href="#docker-compose实战redis集群" class="header-anchor">#</a> Docker compose实战Redis集群:</h3> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+  <span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">master</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> redis
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>master
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 6379<span class="token punctuation">:</span><span class="token number">6379</span>
+
+    <span class="token key atrule">slave1</span><span class="token punctuation">:</span>
+      <span class="token key atrule">image</span><span class="token punctuation">:</span> redis
+      <span class="token key atrule">container_name</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>slave<span class="token punctuation">-</span><span class="token number">1</span>
+      <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> 6380<span class="token punctuation">:</span><span class="token number">6379</span>
+      <span class="token key atrule">command</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>server <span class="token punctuation">-</span><span class="token punctuation">-</span>slaveof redis<span class="token punctuation">-</span>master 6379
+
+    <span class="token key atrule">slave2</span><span class="token punctuation">:</span>
+      <span class="token key atrule">image</span><span class="token punctuation">:</span> redis
+      <span class="token key atrule">container_name</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>slave<span class="token punctuation">-</span><span class="token number">2</span>
+      <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> 6381<span class="token punctuation">:</span><span class="token number">6379</span>
+      <span class="token key atrule">command</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>server <span class="token punctuation">-</span><span class="token punctuation">-</span>slaveof redis<span class="token punctuation">-</span>master 6379
+</code></pre></div><p><strong>使用sentinel实现高可用：</strong></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+  <span class="token key atrule">services</span><span class="token punctuation">:</span>
+    <span class="token key atrule">sentinel1</span><span class="token punctuation">:</span>
+      <span class="token key atrule">image</span><span class="token punctuation">:</span> redis
+      <span class="token key atrule">container_name</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>sentinel<span class="token punctuation">-</span><span class="token number">1</span>
+      <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> 26379<span class="token punctuation">:</span><span class="token number">26379</span>
+      <span class="token key atrule">command</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>sentinel /usr/local/etc/redis/sentinel.conf
+      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+        <span class="token comment">#数据卷</span>
+        <span class="token punctuation">-</span> ./sentinel1.conf<span class="token punctuation">:</span>/usr/local/etc/redis/sentinel.conf
+    <span class="token key atrule">sentinel2</span><span class="token punctuation">:</span>
+      <span class="token key atrule">image</span><span class="token punctuation">:</span> redis
+      <span class="token key atrule">container_name</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>sentinel<span class="token punctuation">-</span><span class="token number">2</span>
+      <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> 26380<span class="token punctuation">:</span><span class="token number">26379</span>
+      <span class="token key atrule">command</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>sentinel /usr/local/etc/redis/sentinel.conf
+      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> ./sentinel2.conf<span class="token punctuation">:</span>/usr/local/etc/redis/sentinel.conf
+    <span class="token key atrule">sentinel3</span><span class="token punctuation">:</span>
+      <span class="token key atrule">image</span><span class="token punctuation">:</span> redis
+      <span class="token key atrule">container_name</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>sentinel<span class="token punctuation">-</span><span class="token number">3</span>
+      <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> 26381<span class="token punctuation">:</span><span class="token number">26379</span>
+      <span class="token key atrule">command</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>sentinel /usr/local/etc/redis/sentinel.conf
+      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> ./sentinel3.conf<span class="token punctuation">:</span>/usr/local/etc/redis/sentinel.conf
+</code></pre></div><h5 id="修改sentinel文件"><a href="#修改sentinel文件" class="header-anchor">#</a> 修改Sentinel文件：</h5> <p>分别为 sentinel1.conf，sentinel2.conf，sentinel3.conf，配置文件内容相同
+配置内容如下：</p> <div class="language- extra-class"><pre class="language-text"><code>port 26379
+dir /tmp
+# 自定义集群名，其中 127.0.0.1 为 redis-master 的 ip，6379 为 redis-master 的端口，2 为最小投票数（因为有 3 台 Sentinel 所以可以设置成 2）
+sentinel monitor mymaster 192.168.147.132 6379 2
+sentinel down-after-milliseconds mymaster 30000
+sentinel parallel-syncs mymaster 1
+sentinel failover-timeout mymaster 180000
+sentinel deny-scripts-reconfig yes
+
+</code></pre></div><h5 id="启动集群"><a href="#启动集群" class="header-anchor">#</a> 启动集群：</h5> <p>docker-compose up -d</p> <h5 id="查看集群是否生效"><a href="#查看集群是否生效" class="header-anchor">#</a> 查看集群是否生效：</h5> <blockquote><p>进入 Sentinel 容器，使用 Sentinel API 查看监控情况：
+docker exec -it redis-sentinel-1 /bin/bash
+redis-cli -p 26379
+sentinel master mymaster
+sentinel slaves mymaster
+生效后即可：</p></blockquote> <h3 id="docker-compose实战fastdfs"><a href="#docker-compose实战fastdfs" class="header-anchor">#</a> Docker compose实战FastDFS</h3> <p>参考下的 SpringClouditoken 项目下的FastDFS一节：http://www.kaysanshi.top/learning-note/</p> <h3 id="docker-compose实战dubbo-zookeeper"><a href="#docker-compose实战dubbo-zookeeper" class="header-anchor">#</a> Docker compose实战Dubbo zookeeper</h3> <p>单节点：</p> <h6 id="单机模式"><a href="#单机模式" class="header-anchor">#</a> 单机模式</h6> <p><font color="red"><strong>新建zookeeper文件夹。在zookeeper文件夹中新建dokcer-compose.yml</strong></font></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">zoo1</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> zookeeper
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">hostname</span><span class="token punctuation">:</span> zookeeper
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 2181<span class="token punctuation">:</span><span class="token number">2181</span>  
+</code></pre></div><p>进入容器。</p> <p><code>docker exec -it zookeeper_zool_1 /bin/bash</code></p> <p>检查是否安装成功：l</p> <p><code>./bin/zkServer.sh status</code></p> <p><a href="https://imgchr.com/i/DugkjI" target="_blank" rel="noopener noreferrer"><img alt="DugkjI.png" data-src="https://s3.ax1x.com/2020/11/19/DugkjI.png" loading="lazy" class="lazy"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>进入bin目录后查看bin目录下的文件：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>root@zookeeper:/apache-zookeeper-3.6.2-bin<span class="token comment"># ls -l bin</span>
+total <span class="token number">64</span>
+-rwxr-xr-x. <span class="token number">1</span> zookeeper zookeeper   <span class="token number">232</span> Sep  <span class="token number">4</span> <span class="token number">12</span>:43 README.txt
+-rwxr-xr-x. <span class="token number">1</span> zookeeper zookeeper  <span class="token number">2066</span> Sep  <span class="token number">4</span> <span class="token number">12</span>:43 zkCleanup.sh
+-rwxr-xr-x. <span class="token number">1</span> zookeeper zookeeper  <span class="token number">1158</span> Sep  <span class="token number">4</span> <span class="token number">12</span>:43 zkCli.cmd
+-rwxr-xr-x. <span class="token number">1</span> zookeeper zookeeper  <span class="token number">1620</span> Sep  <span class="token number">4</span> <span class="token number">12</span>:43 zkCli.sh
+-rwxr-xr-x. <span class="token number">1</span> zookeeper zookeeper  <span class="token number">1843</span> Sep  <span class="token number">4</span> <span class="token number">12</span>:43 zkEnv.cmd
+-rwxr-xr-x. <span class="token number">1</span> zookeeper zookeeper  <span class="token number">3690</span> Sep  <span class="token number">4</span> <span class="token number">12</span>:43 zkEnv.sh
+-rwxr-xr-x. <span class="token number">1</span> zookeeper zookeeper  <span class="token number">4559</span> Sep  <span class="token number">4</span> <span class="token number">12</span>:43 zkServer-initialize.sh
+-rwxr-xr-x. <span class="token number">1</span> zookeeper zookeeper  <span class="token number">1286</span> Sep  <span class="token number">4</span> <span class="token number">12</span>:43 zkServer.cmd
+-rwxr-xr-x. <span class="token number">1</span> zookeeper zookeeper <span class="token number">11116</span> Sep  <span class="token number">4</span> <span class="token number">12</span>:43 zkServer.sh
+-rwxr-xr-x. <span class="token number">1</span> zookeeper zookeeper   <span class="token number">988</span> Sep  <span class="token number">4</span> <span class="token number">12</span>:43 zkSnapShotToolkit.cmd
+-rwxr-xr-x. <span class="token number">1</span> zookeeper zookeeper  <span class="token number">1377</span> Sep  <span class="token number">4</span> <span class="token number">12</span>:43 zkSnapShotToolkit.sh
+-rwxr-xr-x. <span class="token number">1</span> zookeeper zookeeper   <span class="token number">996</span> Sep  <span class="token number">4</span> <span class="token number">12</span>:43 zkTxnLogToolkit.cmd
+-rwxr-xr-x. <span class="token number">1</span> zookeeper zookeeper  <span class="token number">1385</span> Sep  <span class="token number">4</span> <span class="token number">12</span>:43 zkTxnLogToolkit.sh
+root@zookeeper:/apache-zookeeper-3.6.2-bin<span class="token comment"># </span>
+</code></pre></div><p>通过 <code>zkCli</code> 来访问 Zookeeper 的控制台来进行管理。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>root@zookeeper:/apache-zookeeper-3.6.2-bin<span class="token comment"># zkCli.sh -server 127.0.0.1:2181</span>
+Connecting to <span class="token number">127.0</span>.0.1:2181
+<span class="token number">2020</span>-11-20 02:26:42,393 <span class="token punctuation">[</span>myid:<span class="token punctuation">]</span> - INFO  <span class="token punctuation">[</span>main:Environment@98<span class="token punctuation">]</span> - Client environment:zookeeper.version<span class="token operator">=</span><span class="token number">3.6</span>.2--803c7f1a12f85978cb049af5e4ef23bd8b688715, built on 09/04/2020 <span class="token number">12</span>:44 GMT
+<span class="token number">2020</span>-11-20 02:26:42,397 <span class="token punctuation">[</span>myid:<span class="token punctuation">]</span> - INFO  <span class="token punctuation">[</span>main:Environment@98<span class="token punctuation">]</span> - Client environment:host.name<span class="token operator">=</span>zookeeper
+<span class="token number">2020</span>-11-20 02:26:42,397 <span class="token punctuation">[</span>myid:<span class="token punctuation">]</span> - INFO  <span class="token punctuation">[</span>main:Environment@98<span class="token punctuation">]</span> - Client environment:java.version<span class="token operator">=</span><span class="token number">11.0</span>.9.1
+<span class="token number">2020</span>-11-20 02:26:42,398 <span class="token punctuation">[</span>myid:<span class="token punctuation">]</span> - INFO  <span class="token punctuation">[</span>main:Environment@98<span class="token punctuation">]</span> - Client environment:java.vendor<span class="token operator">=</span>Oracle Corporation
+<span class="token number">2020</span>-11-20 02:26:42,398 <span class="token punctuation">[</span>myid:<span class="token punctuation">]</span> - INFO  <span class="token punctuation">[</span>main:Environment@98<span class="token punctuation">]</span> - Client environment:java.home<span class="token operator">=</span>/usr/local/openjdk-11
+<span class="token punctuation">..</span>.
+<span class="token punctuation">..</span>.
+Welcome to ZooKeeper<span class="token operator">!</span>
+<span class="token number">2020</span>-11-20 02:26:42,475 <span class="token punctuation">[</span>myid:127.0.0.1:2181<span class="token punctuation">]</span> - INFO  <span class="token punctuation">[</span>main-SendThread<span class="token punctuation">(</span><span class="token number">127.0</span>.0.1:2181<span class="token punctuation">)</span>:ClientCnxn<span class="token variable">$SendThread</span>@1167<span class="token punctuation">]</span> - Opening socket connection to server localhost/127.0.0.1:2181.
+<span class="token number">2020</span>-11-20 02:26:42,475 <span class="token punctuation">[</span>myid:127.0.0.1:2181<span class="token punctuation">]</span> - INFO  <span class="token punctuation">[</span>main-SendThread<span class="token punctuation">(</span><span class="token number">127.0</span>.0.1:2181<span class="token punctuation">)</span>:ClientCnxn<span class="token variable">$SendThread</span>@1169<span class="token punctuation">]</span> - SASL config status: Will not attempt to authenticate using SASL <span class="token punctuation">(</span>unknown error<span class="token punctuation">)</span>
+JLine support is enabled
+<span class="token number">2020</span>-11-20 02:26:42,491 <span class="token punctuation">[</span>myid:127.0.0.1:2181<span class="token punctuation">]</span> - INFO  <span class="token punctuation">[</span>main-SendThread<span class="token punctuation">(</span><span class="token number">127.0</span>.0.1:2181<span class="token punctuation">)</span>:ClientCnxn<span class="token variable">$SendThread</span>@999<span class="token punctuation">]</span> - Socket connection established, initiating session, client: /127.0.0.1:40896, server: localhost/127.0.0.1:2181
+<span class="token number">2020</span>-11-20 02:26:42,511 <span class="token punctuation">[</span>myid:127.0.0.1:2181<span class="token punctuation">]</span> - INFO  <span class="token punctuation">[</span>main-SendThread<span class="token punctuation">(</span><span class="token number">127.0</span>.0.1:2181<span class="token punctuation">)</span>:ClientCnxn<span class="token variable">$SendThread</span>@1433<span class="token punctuation">]</span> - Session establishment complete on server localhost/127.0.0.1:2181, session <span class="token function">id</span> <span class="token operator">=</span> 0x10013cdbf990003, negotiated <span class="token function">timeout</span> <span class="token operator">=</span> <span class="token number">30000</span>
+
+WATCHER::
+
+WatchedEvent state:SyncConnected type:None path:null
+
+<span class="token punctuation">[</span>zk: <span class="token number">127.0</span>.0.1:2181<span class="token punctuation">(</span>CONNECTED<span class="token punctuation">)</span> <span class="token number">0</span><span class="token punctuation">]</span> create /hello-zone <span class="token string">'world'</span>
+Created /hello-zone
+<span class="token punctuation">[</span>zk: <span class="token number">127.0</span>.0.1:2181<span class="token punctuation">(</span>CONNECTED<span class="token punctuation">)</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token function">ls</span> /
+<span class="token punctuation">[</span>dubbo, hello-zone, zookeeper<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>zk: <span class="token number">127.0</span>.0.1:2181<span class="token punctuation">(</span>CONNECTED<span class="token punctuation">)</span> <span class="token number">2</span><span class="token punctuation">]</span> 
+
+
+</code></pre></div><p>去git 的dubbo 源码 ，然后打jar包，上传到服务器。</p> <p>这个时候直接启动jar 就能访问到了。 <code>java -jar dubbo-admin-0.2.0-SNAPSHOT.jar</code></p> <p>注意这个地方我的那个application.properties并未改动。</p> <div class="language- extra-class"><pre class="language-text"><code>admin.registry.address=zookeeper://127.0.0.1:2181
+admin.config-center=zookeeper://127.0.0.1:2181
+admin.metadata-report.address=zookeeper://127.0.0.1:2181
+</code></pre></div><p>请看页面效果：</p> <p><a href="https://imgchr.com/i/DMvbnI" target="_blank" rel="noopener noreferrer"><img alt="DMvbnI.png" data-src="https://s3.ax1x.com/2020/11/20/DMvbnI.png" loading="lazy" class="lazy"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="docker-compose实战zookeeper集群-有问题-未解决"><a href="#docker-compose实战zookeeper集群-有问题-未解决" class="header-anchor">#</a> Docker compose实战zookeeper集群 （有问题 -未解决）</h3> <p><strong>伪集群模式：</strong></p> <p>在原来的使用是<code>server zool:3888</code> 总是出现问题。新版本推荐使用以下</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">zoo1</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> zookeeper
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">hostname</span><span class="token punctuation">:</span> zoo1
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 2181<span class="token punctuation">:</span><span class="token number">2181</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">ZOO_MY_ID</span><span class="token punctuation">:</span> <span class="token number">1</span>
+      <span class="token key atrule">ZOO_SERVERS</span><span class="token punctuation">:</span> server.1=0.0.0.0<span class="token punctuation">:</span>2888<span class="token punctuation">:</span>3888 server.2=zoo2<span class="token punctuation">:</span>2888<span class="token punctuation">:</span>3888 server.3=zoo3<span class="token punctuation">:</span>2888<span class="token punctuation">:</span><span class="token number">3888</span>
+
+  <span class="token key atrule">zoo2</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> zookeeper
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">hostname</span><span class="token punctuation">:</span> zoo2
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 2182<span class="token punctuation">:</span><span class="token number">2181</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">ZOO_MY_ID</span><span class="token punctuation">:</span> <span class="token number">2</span>
+      <span class="token key atrule">ZOO_SERVERS</span><span class="token punctuation">:</span> server.1=zoo1<span class="token punctuation">:</span>2888<span class="token punctuation">:</span>3888 server.2=0.0.0.0<span class="token punctuation">:</span>2888<span class="token punctuation">:</span>3888 server.3=zoo3<span class="token punctuation">:</span>2888<span class="token punctuation">:</span><span class="token number">3888</span>
+
+  <span class="token key atrule">zoo3</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> zookeeper
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">hostname</span><span class="token punctuation">:</span> zoo3
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 2183<span class="token punctuation">:</span><span class="token number">2181</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">ZOO_MY_ID</span><span class="token punctuation">:</span> <span class="token number">3</span>
+      <span class="token key atrule">ZOO_SERVERS</span><span class="token punctuation">:</span> server.1=zoo1<span class="token punctuation">:</span>2888<span class="token punctuation">:</span>3888 server.2=zoo2<span class="token punctuation">:</span>2888<span class="token punctuation">:</span>3888 server.3=0.0.0.0<span class="token punctuation">:</span>2888<span class="token punctuation">:</span><span class="token number">3888</span>
+</code></pre></div><ul><li>分别以交互方式进入容器查看</li></ul> <div class="language-text extra-class"><pre class="language-text"><code>docker exec -it zookeeper_zoo1_1 /bin/bash
+docker exec -it zookeeper_zoo1_2 /bin/bash
+docker exec -it zookeeper_zoo1_3 /bin/bash
+</code></pre></div><h3 id="docker-compose实战-gitlab"><a href="#docker-compose实战-gitlab" class="header-anchor">#</a> Docker compose实战 gitlab</h3> <p><strong>docker-compose.yml</strong></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>
+  <span class="token key atrule">services</span><span class="token punctuation">:</span>
+    <span class="token key atrule">gitlab</span><span class="token punctuation">:</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> twang2218/gitlab<span class="token punctuation">-</span>ce<span class="token punctuation">-</span>zh
+    <span class="token key atrule">hostname</span><span class="token punctuation">:</span> <span class="token string">'192.168.147.132'</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">TZ</span><span class="token punctuation">:</span> <span class="token string">'Asia/Shanghai'</span>
+      <span class="token key atrule">GITLAB_OMNIBUS_CONFIG</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+        external_url 'http://192.168.147.132:8080'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
+        unicorn['port'] = 8888
+        nginx['listen_port'] = 8080</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">'8080:8080'</span>
+      <span class="token punctuation">-</span> <span class="token string">'8443:443'</span>
+      <span class="token punctuation">-</span> <span class="token string">'2222:22'</span>
+      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> /usr/local/docker/gitlab/config<span class="token punctuation">:</span>/etc/gitlab
+        <span class="token punctuation">-</span> /usr/local/docker/gitlab/data<span class="token punctuation">:</span>/var/opt/gitlab
+        <span class="token punctuation">-</span> /usr/local/docker/gitlab/logs<span class="token punctuation">:</span>/var/log/gitlab
+</code></pre></div><h3 id="docker-compose实战-nexus"><a href="#docker-compose实战-nexus" class="header-anchor">#</a> Docker compose实战 nexus</h3> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+  <span class="token key atrule">services</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nexus</span><span class="token punctuation">:</span>
+      <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+      <span class="token key atrule">image</span><span class="token punctuation">:</span> sonatype/nexus3
+      <span class="token key atrule">container_name</span><span class="token punctuation">:</span> nexus
+      <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> 8081<span class="token punctuation">:</span><span class="token number">8081</span>
+        <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> /usr/local/docker/nexus/data<span class="token punctuation">:</span>/nexus<span class="token punctuation">-</span>data
+</code></pre></div><p>通过：http://ip:port/用户名：密码：验证</p> <h3 id="docker-compose-实战elasticsecarch"><a href="#docker-compose-实战elasticsecarch" class="header-anchor">#</a> Docker compose 实战ElasticSecarch</h3> <p><strong>docker-compose.yml</strong></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.3'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">elasticsearch</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> wutang/elasticsearch<span class="token punctuation">-</span>shanghai<span class="token punctuation">-</span>zone<span class="token punctuation">:</span>6.3.2
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> elasticsearch
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 9200<span class="token punctuation">:</span><span class="token number">9200</span>
+      <span class="token punctuation">-</span> 9300<span class="token punctuation">:</span><span class="token number">9300</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">cluster.name</span><span class="token punctuation">:</span> elasticsearch
+</code></pre></div><p>访问 ： http://elasticsearchIP:9200/  查看是否成功</p> <p>但是这个版本的不支持kibana 重新配置一个：</p> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">elasticsearch</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">:</span>6.8.15
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> elasticsearch
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;cluster.name=elasticsearch&quot;</span>  <span class="token comment">#设置集群名称为elasticsearch</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;discovery.type=single-node&quot;</span>  <span class="token comment">#以单一节点模式启动</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;ES_JAVA_OPTS=-Xms4096m -Xmx4096m&quot;</span>  <span class="token comment">#设置使用jvm内存大小</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token comment"># 需要赋予这些文件权限 </span>
+      <span class="token punctuation">-</span> ./data/elasticsearch/plugins<span class="token punctuation">:</span>/usr/share/elasticsearch/plugins <span class="token comment">#插件文件挂载</span>
+      <span class="token punctuation">-</span> ./data/elasticsearch/data<span class="token punctuation">:</span>/usr/share/elasticsearch/data <span class="token comment">#数据文件挂载</span>
+      <span class="token punctuation">-</span> ./data/elasticsearch/config/elasticsearch.yml<span class="token punctuation">:</span>/usr/share/elasticsearch/config/elasticsearch.yml <span class="token comment">#配置文件挂载</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 9200<span class="token punctuation">:</span><span class="token number">9200</span>
+      <span class="token punctuation">-</span> 9300<span class="token punctuation">:</span><span class="token number">9300</span>
+  <span class="token key atrule">kibana</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> kibana<span class="token punctuation">:</span>6.8.15
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> kibana
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> elasticsearch <span class="token comment">#kibana在elasticsearch启动之后再启动</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;elasticsearch.hosts=http://127.0.0.1:9200&quot;</span> <span class="token comment">#设置访问elasticsearch的地址</span>
+    <span class="token comment"># volumes: 配置数据卷有问题，这里就不配置了</span>
+      <span class="token comment">#- /data/kibana/config:/usr/share/kibana/config #配置文件挂载</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 5601<span class="token punctuation">:</span><span class="token number">5601</span>
+</code></pre></div><p>需要配置：</p> <p>vim  ./data/elasticsearch/config/elasticsearch.yml</p> <div class="language- extra-class"><pre class="language-text"><code>cluster.name: &quot;elasticsearch&quot;
+# 允许外部网络访问
+network.host: 0.0.0.0
+#支持跨域
+http.cors.enabled: true
+#支持所有域名
+http.cors.allow-origin: &quot;*&quot;
+# 关闭xpack安全校验，在kibana中使用就不需要输入账号密码
+xpack.security.enabled: false
+</code></pre></div><p>启动会报错：</p> <p><a href="https://imgtu.com/i/29FIUS" target="_blank" rel="noopener noreferrer"><img alt="29FIUS.png" data-src="https://z3.ax1x.com/2021/05/26/29FIUS.png" loading="lazy" class="lazy"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>需要授予权限：chmod 777 ./data/elasticsearch/data   再次启动可以启动</p> <p>cd  ./data/kibana/config</p> <p>vim kibana.yml</p> <div class="language- extra-class"><pre class="language-text"><code>server.name: kibana
+server.host: &quot;0&quot;
+elasticsearch.hosts: [ &quot;http://localhost:9200&quot; ]
+i18n.locale: &quot;zh-CN&quot;
+</code></pre></div><p><em>vim kibana.yml 后kibana的配置了数据卷，导致出现问题，所以上面的docker-compose文件去除 这个数据卷。</em></p> <p>安装ik分词器：下载zip包上传到：/data/elasticsearch/plugins 目录下 创建个名称为ik文件夹：
+将docker-compose.yml进行配置ik的插件：</p> <div class="language- extra-class"><pre class="language-text"><code>  - ./data/elasticsearch/plugins/ik:/usr/share/elasticsearch/plugins/ik #插件文件挂载
+</code></pre></div><p>看下请求：</p> <p><a href="https://imgtu.com/i/29j7Dg" target="_blank" rel="noopener noreferrer"><img alt="29j7Dg.png" data-src="https://z3.ax1x.com/2021/05/26/29j7Dg.png" loading="lazy" class="lazy"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="docker-compose編排容器"><a href="#docker-compose編排容器" class="header-anchor">#</a> Docker compose編排容器</h3> <p>一般使用先进行安装环境然后通过docker-compose.yml进行编排启动各个服务。</p> <p>比如我们有一个 spring cloud项目</p> <h2 id="docker-registry"><a href="#docker-registry" class="header-anchor">#</a> Docker-Registry:</h2> <h3 id="docker-私服"><a href="#docker-私服" class="header-anchor">#</a> Docker 私服：</h3> <p>​		cd  /usr/local/docker
+​		创建 registry目录
+​		使用docker compose命令直接使用：</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+	<span class="token key atrule">registry</span><span class="token punctuation">:</span>
+		<span class="token key atrule">image</span><span class="token punctuation">:</span> registry
+		<span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+		<span class="token key atrule">container_name</span><span class="token punctuation">:</span> registry
+		<span class="token key atrule">ports</span><span class="token punctuation">:</span>
+			<span class="token punctuation">-</span> 5000<span class="token punctuation">:</span><span class="token number">5000</span>
+		<span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+			<span class="token punctuation">-</span> /usr/local/docker/registry/data<span class="token punctuation">:</span>/var/lib/registry	
+</code></pre></div><p>只要安装之后就可以了，这里只是服务端，同样我们需要客户端测试：http://ip:5000/v2/
+我们在开发时构建服务端之后，在客户端构建一个服务之后上传到这个docker私服中有其他人使用的话直接在这个地方拉取：同时需要在客户端配置：/etc/docker/daemon.json   <code>daemon.json中配置：</code></p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+	<span class="token property">&quot;registry-mirrors&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+		<span class="token string">&quot;https://registry.docker-cn.com&quot;</span>
+	<span class="token punctuation">]</span><span class="token punctuation">,</span>
+	<span class="token property">&quot;insecure-registries&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+		<span class="token string">&quot;ip:5000&quot;</span>
+	<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>	
+</code></pre></div><p>之后重启就可以：</p> <p><code>sudo systemctl daemon-reload</code></p> <p><code>sudo systemctl restart docker</code></p> <h3 id="测试镜像上传"><a href="#测试镜像上传" class="header-anchor">#</a> 测试镜像上传：</h3> <p>​	 拉取一个镜像
+​				docker pull nginx</p> <div class="language- extra-class"><pre><code>## 查看全部镜像 docker images
+## 标记本地镜像并指向目标仓库（ip:port/image_name:tag，该格式为标记版本号）
+    docker tag nginx 192.168.75.133:5000/nginx
+## 提交镜像到仓库
+	docker push 192.168.75.133:5000/nginx
+查看全部镜像：
+	curl -XGET http://192.168.75.133:5000/v2/_catalog
+部署Docker Registry WebUI
+私服安装成功后就可以使用 docker 命令行工具对 registry 做各种操作了。然而不太方便的地方是不能直观的查看 registry 中的资源情况。如果可以使用 UI 工具管理镜像就更好了。这里介绍两个 Docker Registry WebUI 工具
+    docker-registry-frontend
+	docker-registry-web		
+</code></pre></div><h3 id="在客户端中docker-compose中使用这个"><a href="#在客户端中docker-compose中使用这个" class="header-anchor">#</a> 在客户端中docker-compose中使用这个：</h3> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">frontend</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> konradkleine/docker<span class="token punctuation">-</span>registry<span class="token punctuation">-</span>frontend<span class="token punctuation">:</span>v2
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 8080<span class="token punctuation">:</span><span class="token number">80</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./certs/frontend.crt<span class="token punctuation">:</span>/etc/apache2/server.crt<span class="token punctuation">:</span>ro
+      <span class="token punctuation">-</span> ./certs/frontend.key<span class="token punctuation">:</span>/etc/apache2/server.key<span class="token punctuation">:</span>ro
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ENV_DOCKER_REGISTRY_HOST=192.168.75.133
+      <span class="token punctuation">-</span> ENV_DOCKER_REGISTRY_PORT=5000
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vue-press/guide/开发记录问题 learninggenie.html" class="prev">
+        开发记录问题01
+      </a></span> <span class="next"><a href="/vue-press/guide/Git.html">
+        Git
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/vue-press/assets/js/app.98d8bef1.js" defer></script><script src="/vue-press/assets/js/2.c05b7fa4.js" defer></script><script src="/vue-press/assets/js/11.abd4cee0.js" defer></script>
+  </body>
+</html>
