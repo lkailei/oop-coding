@@ -2,7 +2,7 @@
   "dependencies": {
     "yarn": "^1.22.17"
   },
-  "name": "vue-press",
+  "name": "oop-coding",
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {

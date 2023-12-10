@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /images/oopcoding.jpg
-heroText: oopcoding
+heroText: oop-coding
 tagline: Anything is possible 
 actionText: 开始阅读 →
 actionLink: /guide/
